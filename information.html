@@ -1,0 +1,2667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Information - CyberGuard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Enhanced Design Styles */
+        :root {
+            --primary-gradient: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            --secondary-gradient: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            --accent-gradient: linear-gradient(135deg, #c53030 0%, #e53e3e 100%);
+            --heading-font: 'Poppins', sans-serif;
+            --body-font: 'Inter', sans-serif;
+            --text-primary: #1a365d;
+            --text-secondary: #2d3748;
+            --text-light: #4a5568;
+            --text-white: #ffffff;
+        }
+
+        .hero-section {
+            background: var(--primary-gradient);
+            position: relative;
+            overflow: hidden;
+            padding: 4rem 0 6rem 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1920&q=80') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .cyber-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+            align-items: stretch;
+        }
+
+        .cyber-card {
+            min-height: 420px;
+            max-width: 370px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 2.2rem 1.5rem 2rem 1.5rem;
+            box-sizing: border-box;
+        }
+
+        .cyber-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary-gradient);
+        }
+
+        .cyber-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .cyber-card h4 {
+            color: #1a365d;
+            font-weight: 600;
+        }
+
+        .cyber-card p {
+            color: #4a5568;
+        }
+
+        .threat-timeline {
+            position: relative;
+            padding: 3rem 0;
+            overflow: hidden;
+        }
+
+        .threat-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #2563eb, #10b981);
+            transform: translateX(-50%);
+            animation: timelinePulse 2s infinite;
+        }
+
+        @keyframes timelinePulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 99, 235, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            width: 50%;
+            padding: 0 2rem;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            transform: translateX(50px);
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #2563eb, #10b981);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+        }
+
+        .timeline-item:nth-child(odd)::before {
+            right: -12px;
+        }
+
+        .timeline-item:nth-child(even)::before {
+            left: -12px;
+        }
+
+        .timeline-content {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #2563eb, #10b981);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .timeline-content:hover::before {
+            transform: scaleX(1);
+        }
+
+        .timeline-content h4 {
+            color: #1a365d;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .timeline-content:hover h4 {
+            color: #2563eb;
+        }
+
+        .timeline-content p {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 0;
+            transition: color 0.3s ease;
+        }
+
+        .timeline-content:hover p {
+            color: #475569;
+        }
+
+        .timeline-year {
+            position: absolute;
+            top: -12px;
+            background: linear-gradient(135deg, #2563eb, #10b981);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+
+        .timeline-content:hover .timeline-year {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-icon {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 1.75rem;
+            color: #e2e8f0;
+            transition: all 0.4s ease;
+        }
+
+        .timeline-content:hover .timeline-icon {
+            color: #2563eb;
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* Responsive Timeline */
+        @media (max-width: 768px) {
+            .threat-timeline::before {
+                left: 0;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 2rem;
+                padding-right: 0;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::before {
+                left: -12px !important;
+                right: auto !important;
+            }
+        }
+
+        .stats-counter {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .interactive-demo {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .demo-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .demo-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .security-level {
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .security-level-fill {
+            height: 100%;
+            background: var(--primary-gradient);
+            transition: width 0.3s ease;
+        }
+
+        .animated-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--primary-gradient);
+            color: white;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .animated-icon:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* Enhanced Navigation */
+        .navbar {
+            background: rgba(44, 62, 80, 0.95) !important;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 1rem;
+            margin: 0 0.2rem;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gradient);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Enhanced Footer */
+        .footer {
+            background: var(--secondary-gradient);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            margin-right: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: white;
+            color: #2c3e50;
+            transform: translateY(-3px);
+        }
+
+        /* Core Animation Variables */
+        :root {
+            --transition-fast: 0.2s;
+            --transition-normal: 0.3s;
+            --transition-slow: 0.4s;
+            --easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+            --easing-accelerate: cubic-bezier(0.4, 0, 1, 1);
+            --easing-decelerate: cubic-bezier(0, 0, 0.2, 1);
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 8px rgba(0,0,0,0.08);
+            --shadow-lg: 0 8px 16px rgba(0,0,0,0.1);
+            --shadow-hover: 0 12px 24px rgba(0,0,0,0.12);
+        }
+
+        /* Refined Card Styles */
+        .card {
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 12px;
+            background: #fff;
+            transition: all var(--transition-normal) var(--easing-standard);
+            will-change: transform, box-shadow;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(37,99,235,0.15);
+        }
+
+        /* Enhanced Feature Icons */
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #2563eb 0%, #10b981 100%);
+            color: white;
+            margin-bottom: 1rem;
+            transition: all var(--transition-normal) var(--easing-standard);
+            will-change: transform, box-shadow;
+        }
+
+        .feature-icon:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Refined Button Styles */
+        .btn {
+            position: relative;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            transition: all var(--transition-normal) var(--easing-standard);
+            will-change: transform, box-shadow;
+            overflow: hidden;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.1);
+            transform: translate(-50%, -50%) scale(0);
+            border-radius: 50%;
+            transition: transform var(--transition-normal) var(--easing-standard);
+            opacity: 0;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn:hover::after {
+            transform: translate(-50%, -50%) scale(2);
+            opacity: 1;
+        }
+
+        .btn:active {
+            transform: translateY(0);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Smooth Scroll Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all var(--transition-slow) var(--easing-decelerate);
+            will-change: transform, opacity;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transition: opacity var(--transition-slow) var(--easing-decelerate);
+            will-change: opacity;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+        }
+
+        /* Stats Card Refinements */
+        .stats-card {
+            background: #fff;
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all var(--transition-normal) var(--easing-standard);
+            will-change: transform, box-shadow;
+        }
+
+        .stats-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(37,99,235,0.15);
+        }
+
+        /* Section Dividers */
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(90deg, #2563eb, #10b981);
+            border-radius: 2px;
+            margin: 2rem auto;
+            width: 60px;
+            opacity: 0.8;
+            transition: width var(--transition-normal) var(--easing-standard);
+        }
+
+        .section-divider:hover {
+            width: 100px;
+        }
+
+        /* Text Gradient Animation */
+        .gradient-text {
+            background: linear-gradient(45deg, #2563eb, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% auto;
+            animation: gradientFlow 8s linear infinite;
+        }
+
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* List Item Hover Effects */
+        .list-item-hover {
+            transition: all var(--transition-fast) var(--easing-standard);
+            padding: 0.5rem;
+            border-radius: 6px;
+        }
+
+        .list-item-hover:hover {
+            background: rgba(37,99,235,0.05);
+            transform: translateX(4px);
+        }
+
+        /* Card Content Transitions */
+        .card-content {
+            transition: transform var(--transition-normal) var(--easing-standard);
+        }
+
+        .card:hover .card-content {
+            transform: translateY(-2px);
+        }
+
+        /* Enhanced Timeline Styles */
+        .timeline-stats {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .timeline-stats .badge {
+            padding: 0.5rem 1rem;
+            font-weight: 500;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-stats .badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .timeline-summary {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid rgba(37,99,235,0.1);
+        }
+
+        .insight-item {
+            text-align: center;
+            padding: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .insight-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .insight-item i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .insight-item h6 {
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .timeline-content {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #2563eb, #10b981);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .timeline-content:hover::after {
+            transform: scaleX(1);
+        }
+
+        .badge {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .badge::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .badge:hover::after {
+            transform: translateX(100%);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-summary {
+                padding: 1rem !important;
+            }
+            
+            .insight-item {
+                padding: 0.5rem;
+            }
+            
+            .insight-item i {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Circular Timeline with Large Circle, More Spacing, and Upright Cards */
+        .circular-timeline {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 900px;
+            position: relative;
+            background: none;
+        }
+
+        .timeline-cycle {
+            position: relative;
+            width: 900px;
+            height: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline-cycle .cycle-bg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0;
+        }
+
+        .timeline-cycle svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .timeline-card {
+            position: absolute;
+            width: 320px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+            border: 1px solid rgba(37, 99, 235, 0.08);
+            padding: 32px 28px 24px 28px;
+            z-index: 1;
+            transition: box-shadow 0.3s, transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            opacity: 0.98;
+        }
+        .timeline-card:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.13);
+            transform: translateY(-10px) scale(1.04);
+            z-index: 2;
+            opacity: 1;
+        }
+        .timeline-year {
+            position: absolute;
+            top: -15px;
+            left: 28px;
+            background: linear-gradient(135deg, #2563eb, #10b981);
+            color: white;
+            padding: 7px 18px;
+            border-radius: 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+            z-index: 2;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .timeline-card:hover .timeline-year {
+            opacity: 1;
+        }
+        .timeline-icon {
+            font-size: 2.2rem;
+            color: #2563eb;
+            margin-bottom: 12px;
+            align-self: flex-end;
+        }
+        .timeline-card h4 {
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        .timeline-card p {
+            color: #64748b;
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+        .timeline-stats {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+        .timeline-stats .badge {
+            padding: 8px 16px;
+            font-size: 0.95rem;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        .timeline-stats .badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        /* Trigonometric positioning for perfect circle */
+        .timeline-card[data-index] {
+            left: 50%;
+            top: 50%;
+            transform:
+                translate(-50%, -50%)
+                translate(
+                    calc(var(--timeline-radius) * cos(var(--angle))),
+                    calc(var(--timeline-radius) * sin(var(--angle)))
+                );
+        }
+        .timeline-card.card-1 { --angle: 0rad; }
+        .timeline-card.card-2 { --angle: 1.0472rad; } /* 60deg = π/3 */
+        .timeline-card.card-3 { --angle: 2.0944rad; } /* 120deg = 2π/3 */
+        .timeline-card.card-4 { --angle: 3.1416rad; } /* 180deg = π */
+        .timeline-card.card-5 { --angle: 4.1888rad; } /* 240deg = 4π/3 */
+        .timeline-card.card-6 { --angle: 5.2360rad; } /* 300deg = 5π/3 */
+        @media (max-width: 1200px) {
+            .timeline-cycle { width: 600px; height: 600px; }
+            :root { --timeline-radius: 210px; }
+            .timeline-card { width: 200px; padding: 16px 8px 8px 8px; }
+            .timeline-year { font-size: 0.8rem; padding: 4px 10px; left: 8px; }
+            .timeline-icon { font-size: 1.2rem; }
+            .timeline-card h4 { font-size: 0.95rem; }
+            .timeline-card p { font-size: 0.8rem; }
+            .timeline-stats .badge { font-size: 0.7rem; padding: 4px 8px; }
+        }
+        .recent-incidents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem 2rem;
+            justify-items: center;
+            margin-top: 2.5rem;
+        }
+        .recent-incident-card {
+            position: relative;
+            width: 100%;
+            max-width: 370px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+            border: 1px solid rgba(37, 99, 235, 0.08);
+            padding: 32px 28px 24px 28px;
+            transition: box-shadow 0.3s, transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .recent-incident-card:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.13);
+            transform: translateY(-10px) scale(1.04);
+            z-index: 2;
+        }
+        .recent-incident-year {
+            position: absolute;
+            top: -15px;
+            left: 28px;
+            background: linear-gradient(135deg, #2563eb, #10b981);
+            color: white;
+            padding: 7px 18px;
+            border-radius: 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+            z-index: 2;
+            opacity: 1;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .recent-incident-icon {
+            font-size: 2.2rem;
+            color: #2563eb;
+            margin-bottom: 12px;
+            align-self: flex-end;
+        }
+        .recent-incident-card h4 {
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        .recent-incident-card p {
+            color: #64748b;
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+        .recent-incident-stats {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+        .recent-incident-stats .badge {
+            padding: 8px 16px;
+            font-size: 0.95rem;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        .recent-incident-stats .badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        @media (max-width: 600px) {
+            .recent-incident-card { padding: 16px 8px 8px 8px; }
+            .recent-incident-year { font-size: 0.8rem; padding: 4px 10px; left: 8px; }
+            .recent-incident-icon { font-size: 1.2rem; }
+            .recent-incident-card h4 { font-size: 0.95rem; }
+            .recent-incident-card p { font-size: 0.8rem; }
+            .recent-incident-stats .badge { font-size: 0.7rem; padding: 4px 8px; }
+        }
+
+        /* Enhanced Text Colors */
+        .text-primary {
+            color: #2c5282 !important;
+        }
+
+        .text-danger {
+            color: #c53030 !important;
+        }
+
+        .text-warning {
+            color: #c05621 !important;
+        }
+
+        .text-info {
+            color: #2b6cb0 !important;
+        }
+
+        /* Enhanced Button Styles */
+        .btn-primary {
+            background: #2c5282;
+            border-color: #2c5282;
+        }
+
+        .btn-primary:hover {
+            background: #1a365d;
+            border-color: #1a365d;
+        }
+
+        .btn-danger {
+            background: #c53030;
+            border-color: #c53030;
+        }
+
+        .btn-danger:hover {
+            background: #9b2c2c;
+            border-color: #9b2c2c;
+        }
+
+        /* Enhanced Alert Styles */
+        .alert-info {
+            background-color: #ebf8ff;
+            border-color: #bee3f8;
+            color: #2c5282;
+        }
+
+        .alert-warning {
+            background-color: #fffaf0;
+            border-color: #feebc8;
+            color: #c05621;
+        }
+
+        .alert-danger {
+            background-color: #fff5f5;
+            border-color: #fed7d7;
+            color: #c53030;
+        }
+
+        /* Enhanced Progress Bar */
+        .progress {
+            background-color: #e2e8f0;
+            height: 8px;
+            border-radius: 4px;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #2c5282, #4299e1);
+        }
+
+        /* Enhanced Form Controls */
+        .form-control {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+        }
+
+        .form-control:focus {
+            border-color: #2c5282;
+            box-shadow: 0 0 0 3px rgba(44, 82, 130, 0.1);
+        }
+
+        /* Enhanced Card Hover Effects */
+        .card-hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Enhanced Section Backgrounds */
+        .bg-light {
+            background-color: #f7fafc !important;
+        }
+
+        .bg-white {
+            background-color: #ffffff !important;
+        }
+
+        /* Enhanced Text Contrast */
+        .text-muted {
+            color: #4a5568 !important;
+        }
+
+        /* Enhanced Link Colors */
+        a {
+            color: #2c5282;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #1a365d;
+            text-decoration: underline;
+        }
+
+        /* Add Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+        body {
+            font-family: var(--body-font);
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--heading-font);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        /* Enhanced Text Styles */
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-section .lead {
+            font-size: 1.4rem;
+            font-weight: 500;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Enhanced Card Text */
+        .cyber-card h4 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .cyber-card p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Interactive Elements Enhancement */
+        .interactive-element {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .interactive-element:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Enhanced Button Styles */
+        .btn {
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-transform: none;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-primary {
+            background: #2c5282;
+            border: none;
+            box-shadow: 0 4px 6px rgba(44, 82, 130, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: #1a365d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(44, 82, 130, 0.3);
+        }
+
+        /* Enhanced Form Controls */
+        .form-control {
+            font-size: 1.1rem;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: #2c5282;
+            box-shadow: 0 0 0 3px rgba(44, 82, 130, 0.1);
+        }
+
+        /* Enhanced Alert Styles */
+        .alert {
+            font-size: 1.1rem;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Enhanced Stats Display */
+        .stats-counter {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-white);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 0.5rem;
+        }
+
+        .stats-label {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-white);
+            opacity: 0.9;
+        }
+
+        /* Enhanced Navigation */
+        .navbar {
+            padding: 1rem 0;
+            background: rgba(26, 54, 93, 0.95) !important;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-white) !important;
+        }
+
+        .nav-link {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-white) !important;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: rgba(255, 255, 255, 0.9) !important;
+            transform: translateY(-1px);
+        }
+
+        /* Enhanced Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Enhanced Card Styles */
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Enhanced Timeline */
+        .timeline-content {
+            padding: 2rem;
+            border-radius: 12px;
+            background: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-content h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Enhanced Badge Styles */
+        .badge {
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Enhanced Progress Bar */
+        .progress {
+            height: 10px;
+            border-radius: 5px;
+            background-color: #e2e8f0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #2c5282, #4299e1);
+            transition: width 0.6s ease;
+        }
+
+        /* Enhanced Footer */
+        .footer {
+            background: var(--text-primary);
+            color: var(--text-white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer h5 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Enhanced Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 2.5rem 0 2.5rem 0 !important;
+                min-height: unset !important;
+                display: block !important;
+                align-items: unset !important;
+            }
+            .hero-section h1 {
+                margin-top: 1rem !important;
+                margin-bottom: 1.2rem !important;
+            }
+            .hero-section .lead {
+                margin-bottom: 1.5rem !important;
+            }
+            
+            .stats-row {
+                margin-top: 1.5rem;
+            }
+            
+            .nav-btn-group {
+                margin-top: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 2rem 0 3rem 0;
+            }
+            
+            .hero-section h1 {
+                margin-top: 0.5rem;
+                margin-bottom: 1rem;
+            }
+            
+            .hero-section .lead {
+                margin-bottom: 1.5rem;
+            }
+            
+            .stats-row {
+                margin-top: 1rem;
+            }
+            
+            .nav-btn-group {
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+        }
+
+        /* Enhanced Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Enhanced Interactive Tools */
+        .interactive-tool {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .interactive-tool:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .interactive-tool h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .interactive-tool p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Enhanced Form Validation */
+        .form-control.is-invalid {
+            border-color: #e53e3e;
+            background-image: none;
+        }
+
+        .invalid-feedback {
+            font-size: 0.9rem;
+            color: #e53e3e;
+            margin-top: 0.25rem;
+        }
+
+        /* Enhanced Loading States */
+        .loading {
+            position: relative;
+            pointer-events: none;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Enhanced Tooltips */
+        [data-tooltip] {
+            position: relative;
+            cursor: help;
+        }
+
+        [data-tooltip]::before {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0.5rem 1rem;
+            background: var(--text-primary);
+            color: white;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        [data-tooltip]:hover::before {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-5px);
+        }
+
+        /* --- Modern Stat Card Styles --- */
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .stat-card {
+            background: rgba(26,54,93,0.92);
+            color: #fff;
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            padding: 2.2rem 2.5rem 1.5rem 2.5rem;
+            min-width: 220px;
+            text-align: center;
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .stat-card:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 16px 40px rgba(26,54,93,0.22);
+        }
+        .stat-value {
+            font-size: 2.7rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+        }
+        .stat-label {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #e2e8f0;
+            opacity: 0.95;
+        }
+
+        /* --- Modern Button Styles --- */
+        .hero-section .btn, .hero-section .btn:focus {
+            border-radius: 2rem;
+            font-size: 0.98rem;
+            font-weight: 600;
+            padding: 0.35rem 1.1rem;
+            margin: 0 0.15rem 0.5rem 0.15rem;
+            box-shadow: 0 2px 8px rgba(44,82,130,0.10);
+            outline: none;
+            border: none;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            min-width: 150px;
+        }
+        .hero-section .btn-light {
+            background: #fff;
+            color: #1a365d;
+        }
+        .hero-section .btn-light:hover, .hero-section .btn-light:focus {
+            background: #e2e8f0;
+            color: #1a365d;
+        }
+        .hero-section .btn-outline-light {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+        .hero-section .btn-outline-light:hover, .hero-section .btn-outline-light:focus {
+            background: #fff;
+            color: #1a365d;
+        }
+
+        /* --- Modern Alert --- */
+        .hero-section .alert {
+            background: rgba(255,255,255,0.97);
+            color: #1a365d;
+            border-radius: 1rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            box-shadow: 0 2px 12px rgba(26,54,93,0.10);
+            border: none;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 900px) {
+            .stats-row { flex-direction: column; align-items: center; gap: 1.2rem; }
+            .stat-card { min-width: 180px; padding: 1.5rem 1.2rem; }
+        }
+
+        /* Update nav-static-btn to allow hover and pointer events */
+        .nav-static-btn {
+            text-decoration: none !important;
+            box-shadow: none !important;
+            transition: background 0.2s, color 0.2s, border-color 0.2s;
+        }
+        .nav-static-btn:focus, .nav-static-btn:hover {
+            text-decoration: none !important;
+            background: #fff;
+            color: #1a365d;
+            border-color: #fff;
+            box-shadow: 0 4px 16px rgba(44,82,130,0.10);
+            outline: none;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            .hero-section .d-flex.justify-content-center {
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 0 !important;
+                width: 100% !important;
+                max-width: 100vw !important;
+                overflow-x: hidden !important;
+            }
+            .hero-section .btn {
+                width: 100%;
+                max-width: 98vw;
+                margin: 0 0 1rem 0 !important;
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+                font-size: 1.08rem;
+                box-sizing: border-box;
+            }
+            .stats-row {
+                flex-direction: column !important;
+                align-items: center !important;
+                width: 100% !important;
+                gap: 0.7rem !important;
+            }
+            .stat-card {
+                width: 100% !important;
+                max-width: 98vw !important;
+                min-width: unset !important;
+                padding: 0.7rem 0.3rem 0.7rem 0.3rem !important;
+                margin: 0 auto 0.7rem auto !important;
+                box-sizing: border-box !important;
+                border-radius: 0.8rem !important;
+            }
+            .stat-value {
+                font-size: 1.3rem !important;
+                margin-bottom: 0.2rem !important;
+            }
+            .stat-label {
+                font-size: 0.9rem !important;
+            }
+        }
+
+        /* Add nav-btn-group for navigation buttons */
+        .nav-btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.7rem;
+            max-width: 700px;
+            margin: 2.2rem auto 2.2rem auto;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .nav-btn-group {
+                display: none;
+            }
+        }
+
+        .hero-section .btn {
+            flex: 1 1 200px;
+            min-width: 180px;
+            max-width: 320px;
+            width: 100%;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 991.98px) {
+          .navbar-collapse.show {
+            background: #1a365d !important;
+            border-radius: 0 0 1rem 1rem;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            padding: 1rem 0.5rem;
+          }
+          .nav-link::after {
+            display: none !important;
+          }
+        }
+
+        .nav-link,
+        .nav-link:active,
+        .nav-link:focus,
+        .nav-link:hover {
+          text-decoration: none !important;
+        }
+
+        /* Footer (Copied from index.html) */
+        .simple-footer {
+            background: #181c20;
+            color: #fff;
+            padding: 0;
+            margin-top: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+        }
+        .footer-main {
+            text-align: center;
+            padding: 48px 16px 24px 16px;
+        }
+        .footer-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .footer-desc {
+            font-size: 1.05rem;
+            color: #cbd5e1;
+            margin-bottom: 24px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .footer-social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 0;
+        }
+        .footer-social-icon {
+            color: #cbd5e1;
+            font-size: 1.3rem;
+            background: #23272b;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+            text-decoration: none;
+        }
+        .footer-social-icon:hover {
+            background: #2563eb;
+            color: #fff;
+            transform: scale(1.12);
+        }
+        .footer-bottom-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 32px;
+            background: #23272b;
+            font-size: 0.98rem;
+            border-top: 1px solid #23272b;
+            flex-wrap: wrap;
+        }
+        .footer-copyright {
+            color: #cbd5e1;
+        }
+        .footer-nav {
+            display: flex;
+            gap: 18px;
+        }
+        .footer-nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-nav a:hover {
+            color: #2563eb;
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .footer-bottom-bar {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+                padding: 16px 8px;
+            }
+            .footer-nav {
+                justify-content: center;
+            }
+        }
+        /* End Footer */
+
+        /* Cybersecurity Trends 2024 Section */
+        .trends-2024 {
+            background: linear-gradient(120deg, #e0e7ff 0%, #f0fff4 100%);
+            overflow: hidden;
+        }
+        .trends-2024 .container {
+            position: relative;
+            z-index: 1;
+        }
+        .trends-2024 h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #1a365d;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .trends-2024 p {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #4a5568;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .trends-2024 .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .trends-2024 .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+        .trends-2024 .card i {
+            font-size: 3rem;
+            color: #2c5282;
+            margin-bottom: 1rem;
+        }
+        .trends-2024 .card h5 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .trends-2024 .card p {
+            font-size: 1.1rem;
+            color: #4a5568;
+        }
+        /* Cybersecurity Roadmap Timeline Section */
+        .cybersecurity-roadmap {
+            background: white;
+            padding: 4rem 0;
+        }
+        .cybersecurity-roadmap .timeline {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        .cybersecurity-roadmap .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, #2c5282, #4299e1);
+        }
+        .cybersecurity-roadmap .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            width: 100%;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .cybersecurity-roadmap .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+        .cybersecurity-roadmap .timeline-icon {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(to bottom, #2c5282, #4299e1);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .cybersecurity-roadmap .timeline-year {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            color: #4a5568;
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .cybersecurity-roadmap .timeline-content {
+            text-align: center;
+        }
+        .cybersecurity-roadmap .timeline-content h6 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .cybersecurity-roadmap .timeline-content p {
+            font-size: 1rem;
+            color: #4a5568;
+        }
+        .roadmap-wrapper { min-height: 220px; }
+        .roadmap-dot:hover { transform: scale(1.15) rotate(-8deg); box-shadow: 0 8px 32px rgba(44,82,130,0.18); }
+        @media (max-width: 991px) {
+            .roadmap-wrapper { min-height: 320px; }
+            .roadmap-dot { margin-bottom: 0.5rem !important; }
+            .roadmap-year { font-size: 1.1rem !important; }
+        }
+        @media (max-width: 767px) {
+            .roadmap-line { top: 60px !important; }
+            .roadmap-item { margin-bottom: 2.5rem !important; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-shield-alt me-2"></i>CyberGuard
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="information.html">Information</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="help.html">Take Action</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="hero-section text-white py-5 mt-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-10 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-4 animate__animated animate__fadeInDown" style="margin-top: 2rem; font-size: clamp(2rem, 5vw, 3.5rem);">Understanding Cybersecurity</h1>
+                    <p class="lead mb-4 animate__animated animate__fadeInUp" style="font-size: clamp(1rem, 2.5vw, 1.25rem); margin-bottom: 2.5rem;">Your comprehensive guide to digital security in the modern world</p>
+                    <!-- Modern Stat Cards -->
+                    <div class="stats-row">
+                        <div class="stat-card animate-on-scroll">
+                            <div class="stat-value">$6T+</div>
+                            <div class="stat-label">Annual Global Cost</div>
+                        </div>
+                        <div class="stat-card animate-on-scroll">
+                            <div class="stat-value stats-counter">300</div>
+                            <div class="stat-label">Rise in Cybercrime</div>
+                        </div>
+                        <div class="stat-card animate-on-scroll">
+                            <div class="stat-value stats-counter">43</div>
+                            <div class="stat-label">Target Small Businesses</div>
+                        </div>
+                    </div>
+                    <!-- Modern Navigation Buttons -->
+                    <div class="nav-btn-group animate__animated animate__fadeInUp" style="animation-delay: 0.5s;">
+                        <button type="button" class="btn btn-light nav-static-btn" tabindex="-1">Advanced Topics</button>
+                        <button type="button" class="btn btn-outline-light nav-static-btn" tabindex="-1">Recent Incidents</button>
+                        <button type="button" class="btn btn-outline-light nav-static-btn" tabindex="-1">Interactive Tools</button>
+                        <button type="button" class="btn btn-outline-light nav-static-btn" tabindex="-1">Security Awareness</button>
+                        <button type="button" class="btn btn-outline-light nav-static-btn" tabindex="-1">Data Privacy</button>
+                        <button type="button" class="btn btn-outline-light nav-static-btn" tabindex="-1">Incident Response</button>
+                        <button type="button" class="btn btn-outline-light nav-static-btn" tabindex="-1">Threat Intelligence</button>
+                        <button type="button" class="btn btn-outline-light nav-static-btn" tabindex="-1">Compliance & Regulations</button>
+                    </div>
+                    <!-- Modern Alert -->
+                    <div class="alert animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
+                        <i class="fas fa-shield-alt me-2"></i>
+                        <strong>Did you know?</strong> A cyber attack occurs every 39 seconds, affecting one in three Americans each year.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Advanced Cybersecurity Topics Section -->
+    <section class="py-5 position-relative animate__animated animate__fadeInUp" style="background: #f7fafc; border-bottom: 1px solid #e0e6ed; overflow:hidden;animation-delay:0.2s;">
+        <!-- Subtle background pattern -->
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.08;background:url('https://www.transparenttextures.com/patterns/cubes.png') repeat;"></div>
+        <div class="container position-relative" style="z-index:1;">
+            <h2 class="mb-2 text-center fw-bold animate__animated animate__fadeInDown" style="letter-spacing:1px;">Advanced Cybersecurity Topics</h2>
+            <div class="mx-auto mb-4" style="width:80px;height:5px;background:linear-gradient(90deg,#2563eb,#10b981);border-radius:3px;"></div>
+            <p class="text-center text-muted mb-5" style="max-width:600px;margin:0 auto;">Explore the forefront of cybersecurity innovation and the most pressing challenges facing organizations and individuals today.</p>
+            <!-- Main Illustration -->
+            <!-- Image removed as requested -->
+            <div class="row justify-content-center g-4">
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="card text-center shadow-sm h-100 animate-on-scroll border-0 p-3 creative-card animate__animated animate__fadeInUp card-hover-effect" style="transition:box-shadow .3s,transform .3s;">
+                        <div class="icon-wrapper mb-3 animated-icon" style="background:#eaf6fb;transition:background .3s,transform .3s;">
+                            <i class="fas fa-user-secret fa-3x text-primary"></i>
+                        </div>
+                        <h4 class="fw-bold mb-1">Zero Trust Security</h4>
+                        <div class="text-muted mb-2" style="font-size:0.95rem;">#1 Security Model</div>
+                        <p class="mb-2 small">A modern approach where no user or device is trusted by default, even if already inside the network. Every access request is verified, reducing the risk of breaches.</p>
+                        <div class="alert alert-info py-2 px-3 small mb-0" style="font-size:0.95rem;"><strong>Reminder:</strong> Always verify identities and use multi-factor authentication for all access.</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="card text-center shadow-sm h-100 animate-on-scroll border-0 p-3 creative-card animate__animated animate__fadeInUp card-hover-effect" style="transition:box-shadow .3s,transform .3s;">
+                        <div class="icon-wrapper mb-3 animated-icon" style="background:#eaf6fb;transition:background .3s,transform .3s;">
+                            <i class="fas fa-robot fa-3x text-primary"></i>
+                        </div>
+                        <h4 class="fw-bold mb-1">AI in Cyber Defense</h4>
+                        <div class="text-muted mb-2" style="font-size:0.95rem;">Real-Time Threat Detection</div>
+                        <p class="mb-2 small">AI and machine learning power next-gen security, enabling rapid detection and automated response to evolving cyber threats and anomalies.</p>
+                        <div class="alert alert-info py-2 px-3 small mb-0" style="font-size:0.95rem;"><strong>Reminder:</strong> Keep your security tools updated to leverage the latest AI-driven protections.</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="card text-center shadow-sm h-100 animate-on-scroll border-0 p-3 creative-card animate__animated animate__fadeInUp card-hover-effect" style="transition:box-shadow .3s,transform .3s;">
+                        <div class="icon-wrapper mb-3 animated-icon" style="background:#eaf6fb;transition:background .3s,transform .3s;">
+                            <i class="fas fa-cloud fa-3x text-primary"></i>
+                        </div>
+                        <h4 class="fw-bold mb-1">Cloud Security</h4>
+                        <div class="text-muted mb-2" style="font-size:0.95rem;">70% of Orgs in Cloud</div>
+                        <p class="mb-2 small">Securing cloud environments is critical as businesses migrate data and services. Focus areas: misconfiguration, access control, and shared responsibility.</p>
+                        <div class="alert alert-info py-2 px-3 small mb-0" style="font-size:0.95rem;"><strong>Reminder:</strong> Regularly review cloud permissions and enable logging for all cloud resources.</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="card text-center shadow-sm h-100 animate-on-scroll border-0 p-3 creative-card animate__animated animate__fadeInUp card-hover-effect" style="transition:box-shadow .3s,transform .3s;">
+                        <div class="icon-wrapper mb-3 animated-icon" style="background:#eaf6fb;transition:background .3s,transform .3s;">
+                            <i class="fas fa-microchip fa-3x text-primary"></i>
+                        </div>
+                        <h4 class="fw-bold mb-1">IoT Vulnerabilities</h4>
+                        <div class="text-muted mb-2" style="font-size:0.95rem;">30B+ Devices by 2025</div>
+                        <p class="mb-2 small">The explosion of connected devices increases risk. Weak security in IoT can lead to large-scale attacks and privacy breaches.</p>
+                        <div class="alert alert-info py-2 px-3 small mb-0" style="font-size:0.95rem;"><strong>Reminder:</strong> Change default passwords and update firmware on all smart devices.</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="card text-center shadow-sm h-100 animate-on-scroll border-0 p-3 creative-card animate__animated animate__fadeInUp card-hover-effect" style="transition:box-shadow .3s,transform .3s;">
+                        <div class="icon-wrapper mb-3 animated-icon" style="background:#eaf6fb;transition:background .3s,transform .3s;">
+                            <i class="fas fa-user-ninja fa-3x text-primary"></i>
+                        </div>
+                        <h4 class="fw-bold mb-1">Social Engineering</h4>
+                        <div class="text-muted mb-2" style="font-size:0.95rem;">Phishing & Impersonation</div>
+                        <p class="mb-2 small">Attackers manipulate people into revealing confidential info. Phishing emails and fake calls are common tactics to gain access or steal data.</p>
+                        <div class="alert alert-info py-2 px-3 small mb-0" style="font-size:0.95rem;"><strong>Reminder:</strong> Never click suspicious links and always verify sender identities.</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="card text-center shadow-sm h-100 animate-on-scroll border-0 p-3 creative-card animate__animated animate__fadeInUp card-hover-effect" style="transition:box-shadow .3s,transform .3s;">
+                        <div class="icon-wrapper mb-3 animated-icon" style="background:#eaf6fb;transition:background .3s,transform .3s;">
+                            <i class="fas fa-truck-loading fa-3x text-primary"></i>
+                        </div>
+                        <h4 class="fw-bold mb-1">Supply Chain Attacks</h4>
+                        <div class="text-muted mb-2" style="font-size:0.95rem;">Third-Party Risks</div>
+                        <p class="mb-2 small">Cybercriminals target less secure elements in the supply chain to compromise larger organizations. Recent years have seen a rise in these attacks.</p>
+                        <div class="alert alert-info py-2 px-3 small mb-0" style="font-size:0.95rem;"><strong>Reminder:</strong> Vet all vendors and require strong security standards from partners.</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="card text-center shadow-sm h-100 animate-on-scroll border-0 p-3 creative-card animate__animated animate__fadeInUp card-hover-effect" style="transition:box-shadow .3s,transform .3s;">
+                        <div class="icon-wrapper mb-3 animated-icon" style="background:linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);transition:background .3s,transform .3s;">
+                            <i class="fas fa-atom fa-3x text-white"></i>
+                        </div>
+                        <h4 class="fw-bold mb-1">Quantum Threats</h4>
+                        <div class="text-muted mb-2" style="font-size:0.95rem;">Future Security Challenge</div>
+                        <p class="mb-2 small">Quantum computers could break current encryption methods. Organizations need to prepare for post-quantum cryptography to protect sensitive data.</p>
+                        <div class="alert alert-info py-2 px-3 small mb-0" style="font-size:0.95rem;">
+                            <strong>Quantum-Proof:</strong> Stay informed about quantum-resistant encryption standards and plan for future migration.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cybersecurity Trends 2024 Section -->
+    <section class="py-5 position-relative animate__animated animate__fadeInUp" style="background: linear-gradient(120deg, #e0e7ff 0%, #f0fff4 100%); overflow:hidden;">
+        <div class="container position-relative" style="z-index:1;">
+            <h2 class="mb-2 text-center fw-bold animate__animated animate__fadeInDown gradient-text" style="letter-spacing:1px;">Cybersecurity Trends 2024</h2>
+            <div class="mx-auto mb-4" style="width:80px;height:5px;background:linear-gradient(90deg,#6366f1,#10b981);border-radius:3px;"></div>
+            <p class="text-center text-muted mb-5" style="max-width:600px;margin:0 auto;">Stay ahead with the latest trends shaping the cybersecurity landscape in 2024.</p>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4 col-lg-3">
+                    <div class="card h-100 border-0 shadow-lg p-4 text-center animate__animated animate__zoomIn card-hover-effect" style="background:linear-gradient(135deg,#f0f5ff 0%,#e0f7fa 100%);">
+                        <div class="mb-3"><i class="fas fa-brain fa-3x text-primary"></i></div>
+                        <h5 class="fw-bold mb-2">AI-Driven Threats</h5>
+                        <p class="text-muted mb-0">AI is powering both cyber attacks and defense, making threat detection and response faster—but also more complex.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <div class="card h-100 border-0 shadow-lg p-4 text-center animate__animated animate__zoomIn card-hover-effect" style="background:linear-gradient(135deg,#f0f5ff 0%,#e0f7fa 100%);">
+                        <div class="mb-3"><i class="fas fa-user-lock fa-3x text-success"></i></div>
+                        <h5 class="fw-bold mb-2">Zero Trust Expansion</h5>
+                        <p class="text-muted mb-0">Zero Trust is now the gold standard for access control, with organizations adopting it across all digital layers.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <div class="card h-100 border-0 shadow-lg p-4 text-center animate__animated animate__zoomIn card-hover-effect" style="background:linear-gradient(135deg,#f0f5ff 0%,#e0f7fa 100%);">
+                        <div class="mb-3"><i class="fas fa-cloud fa-3x text-info"></i></div>
+                        <h5 class="fw-bold mb-2">Cloud Security Focus</h5>
+                        <p class="text-muted mb-0">With more data in the cloud, misconfigurations and supply chain risks are top concerns for every business.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <div class="card h-100 border-0 shadow-lg p-4 text-center animate__animated animate__zoomIn card-hover-effect" style="background:linear-gradient(135deg,#f0f5ff 0%,#e0f7fa 100%);">
+                        <div class="mb-3"><i class="fas fa-fingerprint fa-3x text-warning"></i></div>
+                        <h5 class="fw-bold mb-2">Biometric Authentication</h5>
+                        <p class="text-muted mb-0">Biometrics are replacing passwords, but privacy and spoofing risks require new security strategies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 gradient-text">Recent Major Cyber Incidents</h2>
+            <p class="text-center text-muted mb-5" style="max-width: 700px; margin: 0 auto;">Explore the most significant cybersecurity incidents that have shaped the digital landscape in recent years, highlighting the evolving nature of cyber threats and their global impact.</p>
+            <div class="recent-incidents-grid">
+                <div class="recent-incident-card">
+                    <span class="recent-incident-year">2020</span>
+                    <i class="fas fa-virus recent-incident-icon"></i>
+                    <h4>COVID-19 Related Attacks</h4>
+                    <p>Cybercriminals exploited the pandemic with phishing campaigns and fake COVID-19 information, leading to a 600% increase in malicious emails and significant financial losses.</p>
+                    <div class="recent-incident-stats mt-2">
+                        <span class="badge bg-primary">600% Increase</span>
+                        <span class="badge bg-danger">$1.2B Losses</span>
+                    </div>
+                </div>
+                <div class="recent-incident-card">
+                    <span class="recent-incident-year">2021</span>
+                    <i class="fas fa-gas-pump recent-incident-icon"></i>
+                    <h4>Colonial Pipeline Attack</h4>
+                    <p>A ransomware attack on Colonial Pipeline caused fuel shortages across the US East Coast, highlighting the vulnerability of critical infrastructure and leading to a $4.4 million ransom payment.</p>
+                    <div class="recent-incident-stats mt-2">
+                        <span class="badge bg-warning">$4.4M Ransom</span>
+                        <span class="badge bg-info">5,500 Miles</span>
+                    </div>
+                </div>
+                <div class="recent-incident-card">
+                    <span class="recent-incident-year">2022</span>
+                    <i class="fas fa-globe recent-incident-icon"></i>
+                    <h4>Global Supply Chain Attacks</h4>
+                    <p>Major supply chain attacks affected thousands of organizations worldwide, with attackers compromising software updates and third-party services to spread malware.</p>
+                    <div class="recent-incident-stats mt-2">
+                        <span class="badge bg-success">18,000+ Orgs</span>
+                        <span class="badge bg-secondary">Global Impact</span>
+                    </div>
+                </div>
+                <div class="recent-incident-card">
+                    <span class="recent-incident-year">2023</span>
+                    <i class="fas fa-robot recent-incident-icon"></i>
+                    <h4>AI-Powered Threats</h4>
+                    <p>The emergence of AI-driven cyber attacks, including sophisticated phishing campaigns and automated malware creation, marked a new era in cyber warfare.</p>
+                    <div class="recent-incident-stats mt-2">
+                        <span class="badge bg-danger">AI Threats</span>
+                        <span class="badge bg-primary">New Era</span>
+                    </div>
+                </div>
+                <div class="recent-incident-card">
+                    <span class="recent-incident-year">2023</span>
+                    <i class="fas fa-hospital recent-incident-icon"></i>
+                    <h4>Healthcare Data Breach</h4>
+                    <p>Major healthcare provider suffered a massive data breach affecting millions of patient records, highlighting the critical need for healthcare cybersecurity.</p>
+                    <div class="recent-incident-stats mt-2">
+                        <span class="badge bg-danger">11M Records</span>
+                        <span class="badge bg-warning">$3.5M Fine</span>
+                    </div>
+                </div>
+                <div class="recent-incident-card">
+                    <span class="recent-incident-year">2024</span>
+                    <i class="fas fa-cloud recent-incident-icon"></i>
+                    <h4>Cloud Infrastructure Attack</h4>
+                    <p>Sophisticated attack on major cloud provider affecting multiple Fortune 500 companies, demonstrating the cascading effects of cloud service disruptions.</p>
+                    <div class="recent-incident-stats mt-2">
+                        <span class="badge bg-primary">Cloud Attack</span>
+                        <span class="badge bg-danger">$2.1B Impact</span>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <div class="timeline-summary p-4 bg-white rounded-4 shadow-sm d-inline-block">
+                    <h5 class="mb-3">Key Insights</h5>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="insight-item">
+                                <i class="fas fa-chart-line text-primary mb-2"></i>
+                                <h6>Rising Costs</h6>
+                                <p class="small text-muted mb-0">Average cost per breach increased by 15%</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="insight-item">
+                                <i class="fas fa-clock text-success mb-2"></i>
+                                <h6>Detection Time</h6>
+                                <p class="small text-muted mb-0">Average detection time: 287 days</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="insight-item">
+                                <i class="fas fa-shield-alt text-warning mb-2"></i>
+                                <h6>Attack Types</h6>
+                                <p class="small text-muted mb-0">Ransomware up by 62%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Cybersecurity Tools Section -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h2 class="text-center mb-5 gradient-text">Interactive Cybersecurity Tools</h2>
+            <div class="recent-incidents-grid">
+                <div class="recent-incident-card">
+                    <span class="recent-incident-year">Tool</span>
+                    <i class="fas fa-key recent-incident-icon"></i>
+                    <h4>Password Strength Checker</h4>
+                    <p>Check how strong your password is. Use a mix of letters, numbers, and symbols for best security.</p>
+                    <input type="password" id="passwordInputTool" class="form-control mb-2" placeholder="Enter password..." style="width:100%;max-width:260px;">
+                    <div class="progress mb-2" style="height: 8px; background: #e2e8f0; width:100%;max-width:260px;">
+                        <div id="passwordStrengthTool" class="progress-bar" role="progressbar" style="width: 0%; background: #ef4444;"></div>
+                    </div>
+                    <div id="passwordFeedbackTool" class="small text-muted"></div>
+                </div>
+                <div class="recent-incident-card">
+                    <span class="recent-incident-year">Tool</span>
+                    <i class="fas fa-lock recent-incident-icon"></i>
+                    <h4>Text Encryption Demo</h4>
+                    <p>Type text to see a simple encryption (Caesar cipher). For demonstration only!</p>
+                    <input type="text" id="encryptInputTool" class="form-control mb-2" placeholder="Enter text..." style="width:100%;max-width:260px;">
+                    <button class="btn btn-primary mb-2" id="encryptButtonTool">Encrypt</button>
+                    <div id="encryptedOutputTool"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    // Chatbot logic
+    const chatbotToggle = document.getElementById('chatbot-toggle');
+    const chatbotWindow = document.getElementById('chatbot-window');
+    const chatbotClose = document.getElementById('chatbot-close');
+    const chatbotForm = document.getElementById('chatbot-form');
+    const chatbotInput = document.getElementById('chatbot-input');
+    const chatbotMessages = document.getElementById('chatbot-messages');
+
+    const chatbotTips = [
+        {q:/zero trust|identity/i, a:'Zero Trust means never trust, always verify. Always use strong authentication.'},
+        {q:/ai|artificial intelligence|machine learning/i, a:'AI helps detect threats faster. Keep your security tools updated to benefit from AI.'},
+        {q:/cloud/i, a:'For cloud security, review permissions regularly and enable logging.'},
+        {q:/iot|device/i, a:'Change default passwords and update firmware on all smart devices.'},
+        {q:/phishing|social engineering|impersonation/i, a:'Never click suspicious links and always verify sender identities.'},
+        {q:/supply chain|vendor|third[- ]party/i, a:'Vet all vendors and require strong security standards from partners.'},
+        {q:/quantum/i, a:'Quantum computers may break current encryption. Stay informed about cryptography updates.'},
+        {q:/reminder|tip|advice/i, a:'Always use strong passwords, enable 2FA, and keep your software updated.'},
+        {q:/password/i, a:'Use unique, complex passwords for every account and enable two-factor authentication.'},
+        {q:/ransomware/i, a:'Backup your data regularly and never open suspicious attachments.'},
+        {q:/data breach/i, a:'Monitor your accounts for unusual activity and change passwords after a breach.'},
+        {q:/hello|hi|hey/i, a:'Hello! How can I help you with cybersecurity today?'},
+        {q:/.*/, a:'I can help with cybersecurity tips! Ask about Zero Trust, AI, phishing, passwords, and more.'}
+    ];
+
+    function addChatbotMessage(msg, from='bot') {
+        const div = document.createElement('div');
+        div.style.marginBottom = '0.7rem';
+        div.style.textAlign = from==='user'?'right':'left';
+        div.innerHTML = `<span style="display:inline-block;padding:0.5rem 1rem;border-radius:16px;max-width:80%;background:${from==='user'?'#eaf6fb':'#2c3e50'};color:${from==='user'?'#222':'#fff'};">${msg}</span>`;
+        chatbotMessages.appendChild(div);
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    chatbotToggle.onclick = () => chatbotWindow.style.display = chatbotWindow.style.display==='none'?'block':'none';
+    chatbotClose.onclick = () => chatbotWindow.style.display = 'none';
+    chatbotForm.onsubmit = (e) => {
+        e.preventDefault();
+        const userMsg = chatbotInput.value.trim();
+        if(!userMsg) return;
+        addChatbotMessage(userMsg, 'user');
+        chatbotInput.value = '';
+        setTimeout(() => {
+            const found = chatbotTips.find(tip => tip.q.test(userMsg));
+            addChatbotMessage(found ? found.a : chatbotTips[chatbotTips.length-1].a, 'bot');
+        }, 600);
+    };
+    </script>
+    <!-- End Chatbot Widget -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Intersection Observer for scroll animations
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Add animations to elements
+            document.querySelectorAll('.animate-on-scroll').forEach(element => {
+                element.classList.add('fade-up');
+                observer.observe(element);
+            });
+
+            document.querySelectorAll('h2, h3, h4').forEach(heading => {
+                heading.classList.add('fade-in');
+                observer.observe(heading);
+            });
+
+            // Add hover effects to list items
+            document.querySelectorAll('.list-group-item, .list-unstyled li').forEach(item => {
+                item.classList.add('list-item-hover');
+            });
+
+            // Add card content transitions
+            document.querySelectorAll('.card-body').forEach(content => {
+                content.classList.add('card-content');
+            });
+
+            // Smooth scroll behavior
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+    function initPasswordStrengthChecker(inputId, barId, feedbackId) {
+        const passwordInput = document.getElementById(inputId);
+        const passwordStrength = document.getElementById(barId);
+        const passwordFeedback = document.getElementById(feedbackId);
+        if (passwordInput && passwordStrength && passwordFeedback) {
+            passwordInput.addEventListener('input', function(e) {
+                const password = e.target.value;
+                const strength = calculatePasswordStrength(password);
+                passwordStrength.style.width = strength.score + '%';
+                passwordStrength.style.background = strength.color;
+                passwordFeedback.textContent = strength.message;
+            });
+        }
+    }
+    function calculatePasswordStrength(password) {
+        let score = 0;
+        let message = '';
+        let color = '#ef4444';
+        if (password.length >= 8) score += 20;
+        if (password.length >= 12) score += 10;
+        if (password.match(/[A-Z]/)) score += 20;
+        if (password.match(/[a-z]/)) score += 20;
+        if (password.match(/[0-9]/)) score += 20;
+        if (password.match(/[^A-Za-z0-9]/)) score += 20;
+        const commonPasswords = ['password', '123456', 'qwerty', 'admin', 'welcome'];
+        if (commonPasswords.includes(password.toLowerCase())) {
+            score = 0;
+            message = 'This is a very common password - please choose something more unique';
+            color = '#ef4444';
+            return { score, message, color };
+        }
+        if (score >= 90) {
+            message = 'Excellent password! Very strong and secure.';
+            color = '#10b981';
+        } else if (score >= 70) {
+            message = 'Strong password. Good job!';
+            color = '#10b981';
+        } else if (score >= 50) {
+            message = 'Good password, but could be stronger.';
+            color = '#f59e0b';
+        } else if (score >= 30) {
+            message = 'Fair password. Consider adding more complexity.';
+            color = '#f59e0b';
+        } else {
+            message = 'Weak password. Please make it stronger.';
+            color = '#ef4444';
+        }
+        return { score, message, color };
+    }
+    function initEncryptionDemo(inputId, buttonId, outputId) {
+        const input = document.getElementById(inputId);
+        const button = document.getElementById(buttonId);
+        const output = document.getElementById(outputId);
+        if (input && button && output) {
+            button.addEventListener('click', function() {
+                encryptTextDemo(input, output);
+            });
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    encryptTextDemo(input, output);
+                }
+            });
+        }
+    }
+    function encryptTextDemo(inputElem, outputElem) {
+        const input = inputElem.value;
+        if (!input) {
+            outputElem.innerHTML = '<div class="alert alert-warning">Please enter text to encrypt</div>';
+            return;
+        }
+        const shift = Math.floor(Math.random() * 10) + 1;
+        const encrypted = input.split('').map(char => {
+            const code = char.charCodeAt(0);
+            if (code >= 65 && code <= 90) {
+                return String.fromCharCode(((code - 65 + shift) % 26) + 65);
+            } else if (code >= 97 && code <= 122) {
+                return String.fromCharCode(((code - 97 + shift) % 26) + 97);
+            } else if (code >= 48 && code <= 57) {
+                return String.fromCharCode(((code - 48 + shift) % 10) + 48);
+            }
+            return char;
+        }).join('');
+        outputElem.innerHTML = `
+            <div class="alert alert-info">
+                <h5 class="mb-2">Encryption Results:</h5>
+                <p class="mb-1"><strong>Original Text:</strong> ${input}</p>
+                <p class="mb-1"><strong>Encrypted Text:</strong> ${encrypted}</p>
+                <p class="mb-0"><small>Note: This is a simple demonstration using a Caesar cipher with shift ${shift}. Real encryption uses much more complex algorithms.</small></p>
+            </div>
+        `;
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        initPasswordStrengthChecker('passwordInputTool', 'passwordStrengthTool', 'passwordFeedbackTool');
+        initEncryptionDemo('encryptInputTool', 'encryptButtonTool', 'encryptedOutputTool');
+    });
+    </script>
+    <script>
+    // Add this to your existing script section
+    document.addEventListener('DOMContentLoaded', function() {
+        // Timeline animation
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2
+        };
+
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    timelineObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        timelineItems.forEach(item => {
+            timelineObserver.observe(item);
+        });
+    });
+    </script>
+    <!-- Add this before the closing body tag -->
+    <script>
+        // Initialize all interactive features
+        document.addEventListener('DOMContentLoaded', function() {
+            // Scroll Animation
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all elements with animation classes
+            document.querySelectorAll('.animate-on-scroll').forEach(element => {
+                observer.observe(element);
+            });
+
+            // Password Strength Checker
+            const passwordInput = document.getElementById('passwordInputTool');
+            const strengthBar = document.getElementById('passwordStrengthTool');
+            const strengthFeedback = document.getElementById('passwordFeedbackTool');
+
+            if (passwordInput && strengthBar && strengthFeedback) {
+                passwordInput.addEventListener('input', function() {
+                    const password = this.value;
+                    const strength = calculatePasswordStrength(password);
+                    
+                    strengthBar.style.width = strength.score + '%';
+                    strengthBar.style.backgroundColor = strength.color;
+                    strengthFeedback.textContent = strength.message;
+                    strengthFeedback.style.color = strength.color;
+                });
+            }
+
+            // Text Encryption Demo
+            const encryptInput = document.getElementById('encryptInputTool');
+            const encryptButton = document.getElementById('encryptButtonTool');
+            const encryptedOutput = document.getElementById('encryptedOutputTool');
+
+            if (encryptInput && encryptButton && encryptedOutput) {
+                encryptButton.addEventListener('click', function() {
+                    const text = encryptInput.value;
+                    if (text) {
+                        const encrypted = caesarCipher(text, 3);
+                        encryptedOutput.innerHTML = `
+                            <div class="alert alert-info mt-3">
+                                <h5>Encryption Results:</h5>
+                                <p><strong>Original:</strong> ${text}</p>
+                                <p><strong>Encrypted:</strong> ${encrypted}</p>
+                                <small class="text-muted">Note: This is a simple Caesar cipher demonstration.</small>
+                            </div>
+                        `;
+                    }
+                });
+            }
+
+            // Add tooltips to elements with data-tooltip attribute
+            document.querySelectorAll('[data-tooltip]').forEach(element => {
+                element.addEventListener('mouseenter', function() {
+                    const tooltip = this.getAttribute('data-tooltip');
+                    if (tooltip) {
+                        this.setAttribute('title', tooltip);
+                    }
+                });
+            });
+
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add loading states to buttons
+            document.querySelectorAll('.btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    if (!this.classList.contains('no-loading')) {
+                        this.classList.add('loading');
+                        setTimeout(() => {
+                            this.classList.remove('loading');
+                        }, 1000);
+                    }
+                });
+            });
+        });
+
+        // Password strength calculation
+        function calculatePasswordStrength(password) {
+            let score = 0;
+            let message = '';
+            let color = '#ef4444';
+
+            if (password.length >= 8) score += 20;
+            if (password.length >= 12) score += 10;
+            if (password.match(/[A-Z]/)) score += 20;
+            if (password.match(/[a-z]/)) score += 20;
+            if (password.match(/[0-9]/)) score += 20;
+            if (password.match(/[^A-Za-z0-9]/)) score += 20;
+
+            if (score >= 90) {
+                message = 'Excellent password! Very strong and secure.';
+                color = '#10b981';
+            } else if (score >= 70) {
+                message = 'Strong password. Good job!';
+                color = '#10b981';
+            } else if (score >= 50) {
+                message = 'Good password, but could be stronger.';
+                color = '#f59e0b';
+            } else if (score >= 30) {
+                message = 'Fair password. Consider adding more complexity.';
+                color = '#f59e0b';
+            } else {
+                message = 'Weak password. Please make it stronger.';
+                color = '#ef4444';
+            }
+
+            return { score, message, color };
+        }
+
+        // Caesar cipher encryption
+        function caesarCipher(text, shift) {
+            return text.split('').map(char => {
+                const code = char.charCodeAt(0);
+                if (code >= 65 && code <= 90) {
+                    return String.fromCharCode(((code - 65 + shift) % 26) + 65);
+                } else if (code >= 97 && code <= 122) {
+                    return String.fromCharCode(((code - 97 + shift) % 26) + 97);
+                }
+                return char;
+            }).join('');
+        }
+
+        // Add smooth reveal animation for stats
+        function animateValue(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                element.textContent = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Animate stats when they come into view
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    const value = parseInt(element.textContent);
+                    animateValue(element, 0, value, 2000);
+                    statsObserver.unobserve(element);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stats-counter').forEach(stat => {
+            statsObserver.observe(stat);
+        });
+    </script>
+    <!-- Footer (Copied from index.html) -->
+    <footer class="simple-footer">
+        <div class="footer-main">
+            <div class="footer-title">CyberGuard</div>
+            <div class="footer-desc">Empowering individuals and organizations with advanced cybersecurity solutions for a safer digital future.</div>
+            <div class="footer-social-icons">
+                <a href="https://www.facebook.com/kian.dunlao" class="footer-social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/prinskiyann/" class="footer-social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:princekiandumlao22@gmail.com" class="footer-social-icon"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom-bar">
+            <div class="footer-copyright">&copy; 2025 CyberGuard. All rights reserved.</div>
+            <div class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="information.html">Information</a>
+                <a href="help.html">Take Action</a>
+            </div>
+        </div>
+    </footer>
+    <style>
+    .simple-footer {
+        background: #181c20;
+        color: #fff;
+        padding: 0;
+        margin-top: 0;
+        font-family: 'Poppins', Arial, sans-serif;
+    }
+    .footer-main {
+        text-align: center;
+        padding: 48px 16px 24px 16px;
+    }
+    .footer-title {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+    }
+    .footer-desc {
+        font-size: 1.05rem;
+        color: #cbd5e1;
+        margin-bottom: 24px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .footer-social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        margin-bottom: 0;
+    }
+    .footer-social-icon {
+        color: #cbd5e1;
+        font-size: 1.3rem;
+        background: #23272b;
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s, color 0.2s, transform 0.2s;
+        text-decoration: none;
+    }
+    .footer-social-icon:hover {
+        background: #2563eb;
+        color: #fff;
+        transform: scale(1.12);
+    }
+    .footer-bottom-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 32px;
+        background: #23272b;
+        font-size: 0.98rem;
+        border-top: 1px solid #23272b;
+        flex-wrap: wrap;
+    }
+    .footer-copyright {
+        color: #cbd5e1;
+    }
+    .footer-nav {
+        display: flex;
+        gap: 18px;
+    }
+    .footer-nav a {
+        color: #cbd5e1;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .footer-nav a:hover {
+        color: #2563eb;
+        text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+        .footer-bottom-bar {
+            flex-direction: column;
+            gap: 8px;
+            text-align: center;
+            padding: 16px 8px;
+        }
+        .footer-nav {
+            justify-content: center;
+        }
+    }
+    </style>
+    <!-- End Footer -->
+</body>
+</html> 
