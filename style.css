@@ -305,6 +305,12 @@ footer::before {
     }
 }
 
+@media (max-width: 575px) {
+    .hero-section {
+        margin-top: 3.5rem;
+    }
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 12px;
