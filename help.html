@@ -8,64 +8,81 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <i class="fas fa-shield-alt me-2"></i>CyberGuard
+                <i class="fas fa-shield-alt me-2"></i>CyberSecurity
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link d-flex align-items-center" href="index.html">
+                            <i class="fas fa-home me-2"></i>Home
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="information.html">Information</a>
+                        <a class="nav-link d-flex align-items-center" href="information.html">
+                            <i class="fas fa-info-circle me-2"></i>Information
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="help.html">Take Action</a>
+                        <a class="nav-link active d-flex align-items-center" href="help.html">
+                            <i class="fas fa-shield-alt me-2"></i>Take Action
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Enhanced Hero Section -->
-    <header class="hero-section text-white py-5 mt-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold mb-4 text-white">Take Action Today</h1>
-                    <p class="lead mb-4 text-white-75">Join our mission to create a safer digital world. Test your knowledge, learn new skills, and become a cybersecurity champion.</p>
-                    <div class="d-flex gap-3">
-                        <a href="#quiz-section" class="btn btn-primary btn-lg">
-                            <i class="fas fa-question-circle me-2"></i>Take Quiz
+    <!-- Modern Hero Section (Animated Background, Improved Mobile) -->
+    <header class="hero-section-modern d-flex align-items-center justify-content-center text-white position-relative" style="min-height: 70vh; background: #151a23; overflow: hidden;">
+        <div class="cyber-bg-network"></div>
+        <div class="container position-relative z-2">
+            <div class="row justify-content-center align-items-center" style="min-height: 60vh;">
+                <div class="col-12 text-center">
+                    <h1 class="display-1 fw-bold mb-3 hero-title-responsive" style="font-family: 'Montserrat', 'Poppins', Arial, sans-serif; letter-spacing:1px; color:#fff;">Take Action Today</h1>
+                    <p class="lead mb-5 hero-lead-responsive" style="font-size:1.25rem; color:#cbd5e1; font-family: 'Poppins', Arial, sans-serif;">Join our mission to create a safer digital world. Test your knowledge, learn new skills, and become a cybersecurity champion.</p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+                        <a href="#cyber-resources" class="btn btn-cyber-flat btn-lg d-flex align-items-center gap-2 justify-content-center">
+                            <span class="icon-wrap"><i class="fas fa-book-open"></i></span>Learn More
                         </a>
-                        <a href="#security-score" class="btn btn-outline-light btn-lg">
-                            <i class="fas fa-chart-line me-2"></i>Check Security Score
+                        <a href="#security-score" class="btn btn-outline-cyber-flat btn-lg d-flex align-items-center gap-2 justify-content-center">
+                            <span class="icon-wrap"><i class="fas fa-shield-alt"></i></span>Get Protected
                         </a>
                     </div>
-                </div>
-                <div class="col-lg-6 d-none d-lg-block">
-                    <div class="laptop-container">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Cybersecurity Laptop" class="img-fluid hero-laptop">
-                        <div class="laptop-screen">
-                            <div class="screen-content">
-                                <div class="security-icon">
-                                    <i class="fas fa-shield-alt"></i>
-                                </div>
-                                <div class="scanning-line"></div>
-                            </div>
-                        </div>
+                    <div class="mt-4">
+                        <i class="fas fa-chevron-down text-cyber" style="font-size:2rem; opacity:0.7;"></i>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Animated SVG Network Background -->
+        <svg class="cyber-bg-network-svg position-absolute top-0 start-0 w-100 h-100" style="z-index:0; pointer-events:none;" viewBox="0 0 1440 400" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <g id="networkLines">
+                <line x1="0" y1="50" x2="1440" y2="50" />
+                <line x1="0" y1="150" x2="1440" y2="150" />
+                <line x1="0" y1="250" x2="1440" y2="250" />
+                <line x1="0" y1="350" x2="1440" y2="350" />
+                <line x1="120" y1="0" x2="120" y2="400" />
+                <line x1="360" y1="0" x2="360" y2="400" />
+                <line x1="600" y1="0" x2="600" y2="400" />
+                <line x1="840" y1="0" x2="840" y2="400" />
+                <line x1="1080" y1="0" x2="1080" y2="400" />
+                <line x1="1320" y1="0" x2="1320" y2="400" />
+            </g>
+            <circle id="c1" cx="360" cy="150" r="8" fill="#38bdf8" opacity="0.18"/>
+            <circle id="c2" cx="840" cy="250" r="10" fill="#38bdf8" opacity="0.18"/>
+            <circle id="c3" cx="1200" cy="50" r="7" fill="#38bdf8" opacity="0.18"/>
+        </svg>
     </header>
 
     <!-- Quick Stats Section -->
@@ -439,12 +456,12 @@
     <!-- Advanced Security Tools Section -->
     <section class="mb-5">
         <div class="container">
-            <h2 class="text-center mb-4 gradient-text">Advanced Security Tools</h2>
+            <h2 class="text-center mb-4 gradient-text">Security Tools & Protection</h2>
             <div class="row g-4">
                 <div class="col-md-6">
                     <div class="card border-0 shadow-lg h-100">
                         <div class="card-body p-4">
-                            <h3 class="card-title mb-4"><i class="fas fa-image text-primary me-2"></i>Security Image Analysis</h3>
+                            <h3 class="card-title mb-4"><i class="fas fa-image text-primary me-2"></i>Scan Image for Threats</h3>
                             <div class="image-upload-container mb-4">
                                 <div class="upload-area p-4 text-center border-2 border-dashed rounded-3" id="dropZone">
                                     <i class="fas fa-cloud-upload-alt fa-3x text-primary mb-3"></i>
@@ -478,27 +495,30 @@
                 <div class="col-md-6">
                     <div class="card border-0 shadow-lg h-100">
                         <div class="card-body p-4">
-                            <h3 class="card-title mb-4"><i class="fas fa-shield-alt text-primary me-2"></i>Security Recommendations</h3>
-                            <div class="security-tips">
-                                <div class="tip-item d-flex align-items-center mb-3 p-3 bg-light rounded-3">
-                                    <i class="fas fa-check-circle text-success me-3 fa-2x"></i>
+                            <h3 class="card-title mb-4"><i class="fas fa-tools text-primary me-2"></i>Security Tools</h3>
+                            <div class="tools-list">
+                                <div class="tool-item d-flex align-items-center mb-3 p-3 bg-light rounded-3">
+                                    <i class="fas fa-lock text-primary me-3 fa-2x"></i>
                                     <div>
-                                        <h5 class="mb-1">Image Metadata</h5>
-                                        <p class="mb-0 text-muted">Remove sensitive metadata from images before sharing</p>
+                                        <h5 class="mb-1">Password Strength Checker</h5>
+                                        <p class="mb-0 text-muted">Test the strength of your passwords</p>
+                                        <button class="btn btn-sm btn-outline-primary mt-2" onclick="checkPasswordStrength()">Check Password</button>
                                     </div>
                                 </div>
-                                <div class="tip-item d-flex align-items-center mb-3 p-3 bg-light rounded-3">
-                                    <i class="fas fa-check-circle text-success me-3 fa-2x"></i>
+                                <div class="tool-item d-flex align-items-center mb-3 p-3 bg-light rounded-3">
+                                    <i class="fas fa-network-wired text-primary me-3 fa-2x"></i>
                                     <div>
-                                        <h5 class="mb-1">File Verification</h5>
-                                        <p class="mb-0 text-muted">Verify image sources and scan for malware</p>
+                                        <h5 class="mb-1">Network Security Analyzer</h5>
+                                        <p class="mb-0 text-muted">Check your network security settings</p>
+                                        <button class="btn btn-sm btn-outline-primary mt-2" onclick="analyzeNetwork()">Analyze Network</button>
                                     </div>
                                 </div>
-                                <div class="tip-item d-flex align-items-center p-3 bg-light rounded-3">
-                                    <i class="fas fa-check-circle text-success me-3 fa-2x"></i>
+                                <div class="tool-item d-flex align-items-center p-3 bg-light rounded-3">
+                                    <i class="fas fa-shield-alt text-primary me-3 fa-2x"></i>
                                     <div>
-                                        <h5 class="mb-1">Safe Sharing</h5>
-                                        <p class="mb-0 text-muted">Use secure platforms for sharing sensitive images</p>
+                                        <h5 class="mb-1">Security Recommendations</h5>
+                                        <p class="mb-0 text-muted">Get personalized security tips</p>
+                                        <button class="btn btn-sm btn-outline-primary mt-2" onclick="getRecommendations()">Get Tips</button>
                                     </div>
                                 </div>
                             </div>
@@ -510,87 +530,81 @@
     </section>
 
     <!-- Interactive Security Checklist -->
-    <section class="security-checklist py-5 bg-light">
+    <section class="security-checklist py-5 position-relative" style="background: linear-gradient(120deg, #f8fafc 60%, #e0f2fe 100%);">
         <div class="container">
-            <h2 class="text-center mb-5">Personal Security Checklist</h2>
+            <h2 class="text-center mb-5 display-5 fw-bold text-cyber" style="letter-spacing:1px;">Personal Security Checklist</h2>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="card border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <div class="checklist-progress mb-4">
-                                <div class="d-flex justify-content-between align-items-center mb-2">
-                                    <h5 class="mb-0">Your Progress</h5>
-                                    <span class="progress-text">0/5 Completed</span>
-                                </div>
-                                <div class="progress" style="height: 8px;">
-                                    <div class="progress-bar" role="progressbar" style="width: 0%"></div>
-                                </div>
+                    <div class="glass-card checklist-card border-0 shadow-lg animate__animated animate__fadeInUp">
+                        <div class="checklist-progress mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0 fw-semibold text-cyber">Your Progress</h5>
+                                <span class="progress-text">0/5 Completed</span>
                             </div>
-                            <div class="checklist-items">
-                                <div class="checklist-item d-flex align-items-center p-3 mb-3 bg-white rounded-3">
-                                    <div class="form-check mb-0">
-                                        <input class="form-check-input" type="checkbox" id="check1">
-                                        <label class="form-check-label" for="check1">
-                                            Use strong, unique passwords for all accounts
-                                        </label>
-                                    </div>
-                                    <i class="fas fa-check-circle text-success ms-auto d-none"></i>
-                                </div>
-                                <div class="checklist-item d-flex align-items-center p-3 mb-3 bg-white rounded-3">
-                                    <div class="form-check mb-0">
-                                        <input class="form-check-input" type="checkbox" id="check2">
-                                        <label class="form-check-label" for="check2">
-                                            Enable two-factor authentication where available
-                                        </label>
-                                    </div>
-                                    <i class="fas fa-check-circle text-success ms-auto d-none"></i>
-                                </div>
-                                <div class="checklist-item d-flex align-items-center p-3 mb-3 bg-white rounded-3">
-                                    <div class="form-check mb-0">
-                                        <input class="form-check-input" type="checkbox" id="check3">
-                                        <label class="form-check-label" for="check3">
-                                            Keep all software and devices updated
-                                        </label>
-                                    </div>
-                                    <i class="fas fa-check-circle text-success ms-auto d-none"></i>
-                                </div>
-                                <div class="checklist-item d-flex align-items-center p-3 mb-3 bg-white rounded-3">
-                                    <div class="form-check mb-0">
-                                        <input class="form-check-input" type="checkbox" id="check4">
-                                        <label class="form-check-label" for="check4">
-                                            Regularly backup important data
-                                        </label>
-                                    </div>
-                                    <i class="fas fa-check-circle text-success ms-auto d-none"></i>
-                                </div>
-                                <div class="checklist-item d-flex align-items-center p-3 bg-white rounded-3">
-                                    <div class="form-check mb-0">
-                                        <input class="form-check-input" type="checkbox" id="check5">
-                                        <label class="form-check-label" for="check5">
-                                            Use a reliable antivirus software
-                                        </label>
-                                    </div>
-                                    <i class="fas fa-check-circle text-success ms-auto d-none"></i>
-                                </div>
+                            <div class="progress modern-progress" style="height: 14px; background: #e0f2fe; border-radius: 8px;">
+                                <div class="progress-bar gradient-bar" role="progressbar" style="width: 0%; border-radius: 8px;"></div>
                             </div>
-                            <div class="checklist-completion mt-4 text-center d-none">
-                                <div class="alert alert-success">
-                                    <i class="fas fa-trophy me-2"></i>
-                                    <span>Great job! You've completed all security checks!</span>
-                                </div>
+                        </div>
+                        <div class="checklist-items">
+                            <div class="checklist-item d-flex align-items-center p-3 mb-3 bg-white rounded-4 shadow-sm animate__animated animate__fadeInUp" data-tip="Use strong, unique passwords for all accounts">
+                                <label class="custom-checkbox mb-0 me-3">
+                                    <input type="checkbox" id="check1">
+                                    <span class="checkmark"><i class="fas fa-check"></i></span>
+                                </label>
+                                <i class="fas fa-key text-cyber me-3 fa-lg"></i>
+                                <span class="fw-medium">Use strong, unique passwords for all accounts</span>
+                            </div>
+                            <div class="checklist-item d-flex align-items-center p-3 mb-3 bg-white rounded-4 shadow-sm animate__animated animate__fadeInUp" data-tip="Enable two-factor authentication where available">
+                                <label class="custom-checkbox mb-0 me-3">
+                                    <input type="checkbox" id="check2">
+                                    <span class="checkmark"><i class="fas fa-check"></i></span>
+                                </label>
+                                <i class="fas fa-shield-alt text-cyber me-3 fa-lg"></i>
+                                <span class="fw-medium">Enable two-factor authentication where available</span>
+                            </div>
+                            <div class="checklist-item d-flex align-items-center p-3 mb-3 bg-white rounded-4 shadow-sm animate__animated animate__fadeInUp" data-tip="Keep all software and devices updated">
+                                <label class="custom-checkbox mb-0 me-3">
+                                    <input type="checkbox" id="check3">
+                                    <span class="checkmark"><i class="fas fa-check"></i></span>
+                                </label>
+                                <i class="fas fa-sync-alt text-cyber me-3 fa-lg"></i>
+                                <span class="fw-medium">Keep all software and devices updated</span>
+                            </div>
+                            <div class="checklist-item d-flex align-items-center p-3 mb-3 bg-white rounded-4 shadow-sm animate__animated animate__fadeInUp" data-tip="Regularly backup important data">
+                                <label class="custom-checkbox mb-0 me-3">
+                                    <input type="checkbox" id="check4">
+                                    <span class="checkmark"><i class="fas fa-check"></i></span>
+                                </label>
+                                <i class="fas fa-database text-cyber me-3 fa-lg"></i>
+                                <span class="fw-medium">Regularly backup important data</span>
+                            </div>
+                            <div class="checklist-item d-flex align-items-center p-3 mb-3 bg-white rounded-4 shadow-sm animate__animated animate__fadeInUp" data-tip="Use a reliable antivirus software">
+                                <label class="custom-checkbox mb-0 me-3">
+                                    <input type="checkbox" id="check5">
+                                    <span class="checkmark"><i class="fas fa-check"></i></span>
+                                </label>
+                                <i class="fas fa-shield-virus text-cyber me-3 fa-lg"></i>
+                                <span class="fw-medium">Use a reliable antivirus software</span>
+                            </div>
+                        </div>
+                        <div class="checklist-completion mt-4 text-center d-none animate__animated animate__fadeInUp">
+                            <div class="alert alert-success d-inline-flex align-items-center px-4 py-3 rounded-4 shadow-lg bg-gradient-cyber">
+                                <i class="fas fa-trophy me-3 fa-2x text-warning animate__animated animate__bounceIn"></i>
+                                <span class="fw-bold fs-5">Great job! You've completed all security checks!</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="cyber-binary-bg position-absolute top-0 start-0 w-100 h-100" style="pointer-events:none;z-index:0;"></div>
     </section>
 
     <!-- Footer -->
     <footer class="simple-footer">
         <div class="footer-main">
-            <div class="footer-title">CyberGuard</div>
-            <div class="footer-desc">Empowering individuals and organizations with advanced cybersecurity solutions for a safer digital future.</div>
+            <div class="footer-title">Cybersecurity Awareness</div>
+            <div class="footer-desc">Empowering individuals and organizations with knowledge and tools for a safer digital future.</div>
             <div class="footer-social-icons">
                 <a href="https://www.facebook.com/kian.dunlao" class="footer-social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/prinskiyann/" class="footer-social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -598,7 +612,7 @@
             </div>
         </div>
         <div class="footer-bottom-bar">
-            <div class="footer-copyright">&copy; 2025 CyberGuard. All rights reserved.</div>
+            <div class="footer-copyright">&copy; 2025 Cybersecurity Awareness. All rights reserved.</div>
             <div class="footer-nav">
                 <a href="index.html">Home</a>
                 <a href="information.html">Information</a>
@@ -693,87 +707,678 @@
         .footer-nav {
             justify-content: center;
         }
+        .footer-main {
+            padding: 32px 16px 16px 16px;
+            margin-top: 2rem;
+        }
+        .footer-title {
+            font-size: 1.8rem;
+        }
+        .footer-desc {
+            font-size: 0.95rem;
+            padding: 0 1rem;
+        }
+        .footer-social-icons {
+            gap: 16px;
+        }
+        .footer-social-icon {
+            width: 36px;
+            height: 36px;
+            font-size: 1.1rem;
+        }
     }
-    .hero-section h1.display-4 {
-        font-size: 2.5rem !important;
+    @media (max-width: 480px) {
+        .footer-main {
+            padding: 24px 12px 12px 12px;
+            margin-top: 3rem;
+        }
+        .footer-title {
+            font-size: 1.5rem;
+        }
+        .footer-desc {
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+        .footer-social-icons {
+            gap: 12px;
+        }
+        .footer-social-icon {
+            width: 32px;
+            height: 32px;
+            font-size: 1rem;
+        }
+        .footer-bottom-bar {
+            padding: 12px 8px;
+            font-size: 0.85rem;
+        }
+        .footer-nav {
+            gap: 12px;
+        }
+        .footer-nav a {
+            font-size: 0.9rem;
+        }
     }
-    .hero-section .btn,
-    .hero-section .btn-lg,
-    .hero-section .btn-outline-light {
-        padding: 0.6rem 1.4rem !important;
-        font-size: 1rem !important;
-        border-radius: 2rem !important;
+    @media (max-width: 360px) {
+        .footer-main {
+            margin-top: 3.5rem;
+        }
+        .footer-title {
+            font-size: 1.3rem;
+        }
+        .footer-desc {
+            font-size: 0.85rem;
+        }
+        .footer-social-icon {
+            width: 30px;
+            height: 30px;
+            font-size: 0.9rem;
+        }
+        .footer-bottom-bar {
+            font-size: 0.8rem;
+        }
+        .footer-nav a {
+            font-size: 0.85rem;
+        }
     }
-    .get-involved .btn {
-        padding: 0.6rem 1.4rem !important;
-        font-size: 1rem !important;
-        border-radius: 2rem !important;
+    .hero-section-modern {
+        min-height: 70vh;
+        background: #151a23;
+        position: relative;
+        z-index: 1;
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
     }
-    /* Image Analysis Tool Styles */
-    .upload-area {
-        border: 2px dashed #dee2e6;
-        transition: all 0.3s ease;
-        cursor: pointer;
+    .hero-section-modern .display-1, .hero-title-responsive {
+        font-size: 3.2rem;
+        font-weight: 900;
+        letter-spacing: 1.5px;
+        color: #fff;
+        text-shadow: none;
+        line-height: 1.1;
     }
-
-    .upload-area:hover, .upload-area.border-primary {
-        border-color: #0d6efd;
-        background-color: rgba(13, 110, 253, 0.05);
+    .hero-lead-responsive {
+        font-size: 1.18rem;
+        line-height: 1.5;
+        margin-bottom: 2.2rem;
     }
-
-    .loading {
-        padding: 2rem;
-        text-align: center;
+    .hero-section-modern .btn-cyber-flat,
+    .hero-section-modern .btn-outline-cyber-flat {
+        width: 100%;
+        max-width: 340px;
+        justify-content: center;
     }
-
-    .loading i {
-        color: #0d6efd;
-        margin-bottom: 1rem;
+    .hero-section-modern .d-flex.flex-wrap {
+        flex-direction: row;
+        gap: 1.1rem;
     }
-
-    .analysis-results {
+    .hero-section-modern .mt-4 {
+        margin-top: 2.2rem !important;
+    }
+    @media (max-width: 991px) {
+        .hero-section-modern .display-1, .hero-title-responsive { font-size: 2.1rem; }
+        .hero-lead-responsive { font-size: 1rem; }
+        .hero-section-modern { min-height: 50vh; padding-top: 1.5rem; padding-bottom: 1.5rem; }
+    }
+    @media (max-width: 575px) {
+        .hero-section-modern {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+        .hero-section-modern .display-1, .hero-title-responsive {
+            font-size: 0.95rem !important;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+        .hero-lead-responsive {
+            font-size: 0.78rem !important;
+            margin-bottom: 0.7rem;
+        }
+        .hero-section-modern .d-flex.flex-wrap {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .hero-section-modern .btn-cyber-flat,
+        .hero-section-modern .btn-outline-cyber-flat {
+            font-size: 0.85rem !important;
+            padding: 0.5rem 0.2rem !important;
+            width: 100%;
+            max-width: 100%;
+            border-radius: 1.2rem;
+            min-height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-section-modern .mt-4 {
+            margin-top: 0.6rem !important;
+        }
+    }
+    @media (max-width: 400px) {
+        .hero-section-modern .display-1, .hero-title-responsive {
+            font-size: 1.05rem !important;
+        }
+        .hero-lead-responsive {
+            font-size: 0.8rem !important;
+        }
+    }
+    .btn-cyber-flat {
+        background: #38bdf8;
+        color: #fff;
+        border: none;
+        border-radius: 2rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        padding: 0.7rem 2.1rem;
+        transition: background 0.2s, color 0.2s, transform 0.15s;
+        font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
+        font-size: 1.1rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        box-shadow: none;
+    }
+    .btn-cyber-flat:hover {
+        background: #0ea5e9;
+        color: #fff;
+        transform: translateY(-2px) scale(1.04);
+    }
+    .btn-outline-cyber-flat {
+        border: 2px solid #38bdf8;
+        color: #38bdf8;
+        background: transparent;
+        border-radius: 2rem;
+        font-weight: 700;
+        padding: 0.7rem 2.1rem;
+        font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
+        font-size: 1.1rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        box-shadow: none;
+        transition: background 0.2s, color 0.2s, transform 0.15s;
+    }
+    .btn-outline-cyber-flat:hover {
+        background: #38bdf8;
+        color: #fff;
+        transform: translateY(-2px) scale(1.04);
+    }
+    .icon-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3em;
+        transition: transform 0.2s, color 0.2s;
+    }
+    .btn-cyber-flat:hover .icon-wrap, .btn-outline-cyber-flat:hover .icon-wrap {
+        color: #fff;
+        transform: scale(1.12) rotate(-6deg);
+    }
+    .cyber-bg-network-svg {
+        position: absolute;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        z-index: 0;
+        pointer-events: none;
+    }
+    .glass-card {
+        background: rgba(30, 41, 59, 0.55);
+        border-radius: 2rem;
+        box-shadow: 0 8px 40px #0ea5e955, 0 1.5px 8px #0002;
+        backdrop-filter: blur(8px) saturate(1.2);
+        border: 1.5px solid rgba(56, 189, 248, 0.18);
+        position: relative;
+        z-index: 2;
+    }
+    .hero-glow {
+        text-shadow: 0 2px 32px #38bdf8cc, 0 1px 0 #222;
+        background: linear-gradient(90deg, #38bdf8 0%, #0ea5e9 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    .pulse-shield {
+        display: inline-block;
+        animation: pulse-shield 1.8s infinite cubic-bezier(.4,0,.6,1);
+        color: #38bdf8;
+        filter: drop-shadow(0 0 8px #0ea5e9cc);
+    }
+    @keyframes pulse-shield {
+        0% { transform: scale(1); filter: drop-shadow(0 0 8px #0ea5e9cc); }
+        50% { transform: scale(1.12); filter: drop-shadow(0 0 24px #38bdf8cc); }
+        100% { transform: scale(1); filter: drop-shadow(0 0 8px #0ea5e9cc); }
+    }
+    .shield-pulse {
+        animation: shieldPulse 2.2s infinite cubic-bezier(.4,0,.6,1);
+    }
+    @keyframes shieldPulse {
+        0% { filter: drop-shadow(0 0 0 #38bdf8); }
+        50% { filter: drop-shadow(0 0 32px #38bdf8cc); }
+        100% { filter: drop-shadow(0 0 0 #38bdf8); }
+    }
+    .btn-cyber-modern {
+        background: linear-gradient(90deg, #0ea5e9 0%, #38bdf8 100%);
+        color: #fff;
+        border: none;
+        border-radius: 2rem;
+        box-shadow: 0 2px 16px #0ea5e9a0, 0 1.5px 8px #0002;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        padding: 0.7rem 2.1rem;
+        transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+        font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
+        font-size: 1.1rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .btn-cyber-modern:hover {
+        background: linear-gradient(90deg, #38bdf8 0%, #0ea5e9 100%);
+        box-shadow: 0 4px 32px #38bdf8a0, 0 1.5px 8px #0002;
+        color: #fff;
+        transform: translateY(-2px) scale(1.04);
+    }
+    .btn-outline-cyber-modern {
+        border: 2px solid #38bdf8;
+        color: #38bdf8;
+        background: rgba(255,255,255,0.01);
+        border-radius: 2rem;
+        font-weight: 700;
+        padding: 0.7rem 2.1rem;
+        font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
+        font-size: 1.1rem;
+        box-shadow: 0 2px 16px #38bdf822, 0 1.5px 8px #0002;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+    }
+    .btn-outline-cyber-modern:hover {
+        background: #38bdf8;
+        color: #fff;
+        box-shadow: 0 4px 32px #38bdf8a0, 0 1.5px 8px #0002;
+        transform: translateY(-2px) scale(1.04);
+    }
+    .icon-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3em;
+        transition: transform 0.2s, color 0.2s;
+    }
+    .btn-cyber-modern:hover .icon-wrap, .btn-outline-cyber-modern:hover .icon-wrap {
+        color: #fff;
+        transform: scale(1.18) rotate(-8deg);
+    }
+    .cyber-bg {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(120deg, #10131a 70%, #1e293b 100%);
+        opacity: 0.18;
+        z-index: 0;
+    }
+    .cyber-binary-bg {
+        animation: cyber-binary-move 18s linear infinite;
+        background: repeating-linear-gradient(90deg, transparent, transparent 8px, #0ea5e9 8px, #0ea5e9 10px), repeating-linear-gradient(180deg, transparent, transparent 12px, #38bdf8 12px, #38bdf8 14px);
+        opacity: 0.08;
+    }
+    @keyframes cyber-binary-move {
+        0% { background-position: 0 0, 0 0; }
+        100% { background-position: 80px 40px, 40px 80px; }
+    }
+    .glass-card .btn-link.text-cyber {
+        font-weight: 600;
+        font-size: 1.08rem;
+        letter-spacing: 0.5px;
+        text-decoration: underline;
+        color: #38bdf8;
+        transition: color 0.2s;
+    }
+    .glass-card .btn-link.text-cyber:hover {
+        color: #0ea5e9;
+        text-decoration: none;
+    }
+    @media (max-width: 991px) {
+        .glass-card { padding: 2rem 1.2rem; }
+        .display-3 { font-size: 2.1rem; }
+        .cyber-illustration-modern { margin-top: 2rem; }
+    }
+    @media (max-width: 767px) {
+        .glass-card { padding: 1.2rem 0.7rem; }
+        .display-3 { font-size: 1.5rem; }
+    }
+    .checklist-card {
+        background: rgba(255,255,255,0.55);
+        border-radius: 2rem;
+        box-shadow: 0 8px 40px #0ea5e933, 0 1.5px 8px #0001;
+        backdrop-filter: blur(12px) saturate(1.2);
+        border: 1.5px solid rgba(56, 189, 248, 0.13);
+        position: relative;
+        z-index: 2;
+        animation: fadeInUp 1s cubic-bezier(.4,0,.2,1);
+    }
+    .modern-progress .gradient-bar {
+        background: linear-gradient(90deg, #0ea5e9 0%, #38bdf8 100%);
+        box-shadow: 0 2px 12px #38bdf855;
+        transition: width 0.5s cubic-bezier(.4,0,.2,1);
+        animation: progressGlow 2s infinite alternate;
+    }
+    @keyframes progressGlow {
+        0% { box-shadow: 0 2px 12px #38bdf855, 0 0 0 #0ea5e9; }
+        100% { box-shadow: 0 2px 24px #38bdf8aa, 0 0 16px #0ea5e9; }
+    }
+    .custom-checkbox {
+        position: relative;
+        display: inline-block;
+        width: 28px;
+        height: 28px;
+    }
+    .custom-checkbox input[type="checkbox"] {
         opacity: 0;
-        transform: translateY(10px);
-        transition: all 0.3s ease;
+        width: 0;
+        height: 0;
     }
-
-    .analysis-results.fade-in {
+    .checkmark {
+        position: absolute;
+        top: 0; left: 0;
+        width: 28px; height: 28px;
+        background: linear-gradient(135deg, #e0f2fe 60%, #fff 100%);
+        border-radius: 8px;
+        border: 2px solid #38bdf8;
+        box-shadow: 0 2px 8px #0ea5e922;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: #fff;
+        transition: background 0.2s, border 0.2s;
+        opacity: 0.85;
+    }
+    .custom-checkbox input:checked ~ .checkmark {
+        background: linear-gradient(135deg, #38bdf8 60%, #0ea5e9 100%);
+        border: 2px solid #0ea5e9;
+        color: #fff;
         opacity: 1;
-        transform: translateY(0);
+        animation: checkPop 0.3s cubic-bezier(.4,0,.2,1);
     }
-
-    .tip-item {
-        transition: all 0.3s ease;
+    .custom-checkbox .fa-check {
+        opacity: 0;
+        transform: scale(0.7);
+        transition: opacity 0.2s, transform 0.2s;
     }
-
-    .tip-item:hover {
-        transform: translateX(5px);
-        background-color: #f8f9fa;
-    }
-
-    .tip-item i {
-        transition: all 0.3s ease;
-    }
-
-    .tip-item:hover i {
+    .custom-checkbox input:checked ~ .checkmark .fa-check {
+        opacity: 1;
         transform: scale(1.1);
     }
-
-    #imagePreview img {
+    @keyframes checkPop {
+        0% { transform: scale(0.8); }
+        60% { transform: scale(1.15); }
+        100% { transform: scale(1); }
+    }
+    .checklist-item {
+        transition: box-shadow 0.2s, background 0.2s, transform 0.15s;
+        cursor: pointer;
+        border: 1.5px solid transparent;
+        font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
+        font-size: 1.08rem;
+    }
+    .checklist-item:hover, .checklist-item:focus-within {
+        background: #e0f2fe44;
+        box-shadow: 0 2px 16px #38bdf822;
+        border: 1.5px solid #38bdf8;
+        transform: translateY(-2px) scale(1.01);
+    }
+    .checklist-item.completed {
+        background: linear-gradient(90deg, #e0f2fe 60%, #fff 100%);
+        border: 1.5px solid #0ea5e9;
+        opacity: 0.97;
+    }
+    .checklist-item .fa-check-circle {
+        color: #38bdf8;
+        font-size: 1.5rem;
+        margin-left: auto;
+        transition: opacity 0.2s;
+    }
+    .checklist-completion .alert {
+        background: linear-gradient(90deg, #38bdf8 0%, #0ea5e9 100%);
+        color: #fff;
+        border: none;
+        box-shadow: 0 2px 16px #38bdf8a0;
+        animation: fadeInUp 0.7s cubic-bezier(.4,0,.2,1);
+    }
+    .bg-gradient-cyber {
+        background: linear-gradient(90deg, #38bdf8 0%, #0ea5e9 100%) !important;
+        color: #fff !important;
+    }
+    @media (max-width: 767px) {
+        .checklist-card { padding: 1.2rem 0.7rem; }
+        .checklist-item { font-size: 0.98rem; }
+    }
+    @media (max-width: 575px) {
+        .checklist-item {
+            margin-bottom: 0.7rem !important;
+        }
+    }
+    /* Add these new styles for navbar icons */
+    .navbar-nav .nav-link {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
         transition: all 0.3s ease;
     }
 
-    #imagePreview img:hover {
-        transform: scale(1.02);
+    .navbar-nav .nav-link i {
+        font-size: 1.1rem;
+        transition: transform 0.3s ease;
     }
 
-    .progress {
-        height: 8px;
-        background-color: #e9ecef;
+    .navbar-nav .nav-link:hover i {
+        transform: scale(1.2);
     }
 
-    .progress-bar {
-        transition: width 0.3s ease;
+    .navbar-nav .nav-link.active i {
+        color: #2563eb;
+    }
+
+    /* Mobile-First Responsive Styles */
+    @media (max-width: 768px) {
+        /* Navigation Mobile Adjustments */
+        .navbar {
+            padding: 0.5rem 1rem;
+        }
+
+        .navbar-brand {
+            font-size: 1.3rem;
+        }
+
+        .navbar-toggler {
+            padding: 0.4rem;
+            border: none;
+        }
+
+        .navbar-collapse {
+            background: rgba(24, 28, 32, 0.98);
+            padding: 1rem;
+            border-radius: 12px;
+            margin-top: 0.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-nav {
+            gap: 0.5rem;
+        }
+
+        .nav-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 0;
+        }
+
+        .nav-item:last-child {
+            border-bottom: none;
+        }
+
+        .nav-link {
+            padding: 0.7rem 1rem;
+            font-size: 1.1rem;
+        }
+
+        .nav-link i {
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link:hover i {
+            transform: scale(1.2);
+        }
+
+        .nav-link.active i {
+            color: #2563eb;
+        }
+    }
+    /* --- Enhanced Responsive & Creative Hero Section Styles --- */
+    .hero-section-modern {
+        min-height: 70vh;
+        background: linear-gradient(135deg, #181f2a 60%, #2563eb 100%);
+        border-radius: 0 0 2.5rem 2.5rem;
+        box-shadow: 0 8px 32px #2563eb22;
+        padding: 3.5rem 1.2rem 2.5rem 1.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+    }
+    .hero-section-modern .display-1, .hero-title-responsive {
+        font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
+        font-size: 2.2rem;
+        font-weight: 900;
+        letter-spacing: 1.5px;
+        color: #fff;
+        text-shadow: 0 2px 16px #2563eb44;
+        margin-bottom: 0.7rem;
+        line-height: 1.1;
+    }
+    .hero-lead-responsive {
+        font-size: 1.1rem;
+        color: #cbd5e1;
+        margin-bottom: 2rem;
+        font-family: 'Poppins', Arial, sans-serif;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+    .hero-section-modern .d-flex.flex-wrap {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto 1.2rem auto;
+    }
+    .hero-section-modern .btn-cyber-flat {
+        background: linear-gradient(90deg, #38bdf8 0%, #2563eb 100%);
+        color: #fff;
+        border: none;
+        border-radius: 2rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        padding: 0.9rem 2.1rem;
+        font-size: 1.1rem;
+        box-shadow: 0 2px 16px #38bdf855;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.7rem;
+        transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+    }
+    .hero-section-modern .btn-cyber-flat:hover, .hero-section-modern .btn-cyber-flat:active {
+        background: linear-gradient(90deg, #2563eb 0%, #38bdf8 100%);
+        box-shadow: 0 4px 32px #2563eb55;
+        transform: translateY(-2px) scale(1.04);
+    }
+    .hero-section-modern .btn-outline-cyber-flat {
+        border: 2px solid #38bdf8;
+        color: #38bdf8;
+        background: transparent;
+        border-radius: 2rem;
+        font-weight: 700;
+        padding: 0.9rem 2.1rem;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.7rem;
+        box-shadow: 0 2px 16px #38bdf822;
+        transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+    }
+    .hero-section-modern .btn-outline-cyber-flat:hover, .hero-section-modern .btn-outline-cyber-flat:active {
+        background: #38bdf8;
+        color: #fff;
+        box-shadow: 0 4px 32px #38bdf855;
+        transform: translateY(-2px) scale(1.04);
+    }
+    .hero-section-modern .icon-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3em;
+        transition: transform 0.2s, color 0.2s;
+    }
+    .hero-section-modern .btn-cyber-flat:hover .icon-wrap, .hero-section-modern .btn-outline-cyber-flat:hover .icon-wrap {
+        color: #fff;
+        transform: scale(1.12) rotate(-6deg);
+    }
+    .hero-section-modern .mt-4 {
+        margin-top: 1.5rem !important;
+    }
+    .hero-section-modern .fa-chevron-down {
+        font-size: 2rem;
+        opacity: 0.7;
+        animation: bounceDown 1.5s infinite alternate;
+    }
+    @keyframes bounceDown {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(10px); }
+    }
+    /* Mobile Styles */
+    @media (max-width: 575px) {
+        .hero-section-modern {
+            padding: 1.2rem 0.3rem 1.2rem 0.3rem;
+            min-height: 55vh;
+            border-radius: 0 0 1.2rem 1.2rem;
+            margin-top: 4.5rem;
+        }
+        .hero-section-modern .display-1, .hero-title-responsive {
+            font-size: 1.25rem !important;
+            margin-bottom: 0.4rem;
+        }
+        .hero-lead-responsive {
+            font-size: 0.95rem !important;
+            margin-bottom: 1.1rem;
+        }
+        .hero-section-modern .d-flex.flex-wrap {
+            gap: 0.5rem;
+            max-width: 100%;
+        }
+        .hero-section-modern .btn-cyber-flat,
+        .hero-section-modern .btn-outline-cyber-flat {
+            font-size: 0.98rem !important;
+            padding: 0.7rem 0.2rem !important;
+            width: 100%;
+            max-width: 100%;
+            border-radius: 1.2rem;
+            min-height: 36px;
+        }
+        .hero-section-modern .mt-4 {
+            margin-top: 0.7rem !important;
+        }
+    }
+    @media (max-width: 400px) {
+        .hero-section-modern .display-1, .hero-title-responsive {
+            font-size: 1.05rem !important;
+        }
+        .hero-lead-responsive {
+            font-size: 0.8rem !important;
+        }
     }
     </style>
 
@@ -886,111 +1491,82 @@
         showQuestion(current);
     })();
 
-    // Image Analysis Tool Functionality
+    // Security Tools Functionality
     document.addEventListener('DOMContentLoaded', function() {
-        const dropZone = document.getElementById('dropZone');
-        const imageInput = document.getElementById('imageInput');
-        const imagePreview = document.getElementById('imagePreview');
-        const previewImg = document.getElementById('previewImg');
-        const analysisResults = document.getElementById('analysisResults');
-        const analysisProgress = document.getElementById('analysisProgress');
-        const analysisText = document.getElementById('analysisText');
+        const startScanBtn = document.getElementById('startScan');
+        const scanResults = document.getElementById('scanResults');
+        const scanProgress = document.getElementById('scanProgress');
+        const scanText = document.getElementById('scanText');
 
-        // Handle drag and drop
-        dropZone.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            dropZone.classList.add('border-primary');
-        });
-
-        dropZone.addEventListener('dragleave', () => {
-            dropZone.classList.remove('border-primary');
-        });
-
-        dropZone.addEventListener('drop', (e) => {
-            e.preventDefault();
-            dropZone.classList.remove('border-primary');
-            const file = e.dataTransfer.files[0];
-            handleImageUpload(file);
-        });
-
-        // Handle file input change
-        imageInput.addEventListener('change', (e) => {
-            const file = e.target.files[0];
-            handleImageUpload(file);
-        });
-
-        // Handle image upload
-        function handleImageUpload(file) {
-            if (file && file.type.startsWith('image/')) {
-                if (file.size > 5 * 1024 * 1024) { // 5MB limit
-                    alert('File size exceeds 5MB limit');
-                    return;
-                }
-
-                // Show loading state
-                dropZone.innerHTML = '<div class="loading"><i class="fas fa-spinner fa-spin fa-2x"></i><p>Processing image...</p></div>';
-                
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    previewImg.src = e.target.result;
-                    imagePreview.classList.remove('d-none');
-                    analyzeImage(file);
-                    
-                    // Restore drop zone
-                    dropZone.innerHTML = `
-                        <i class="fas fa-cloud-upload-alt fa-3x text-primary mb-3"></i>
-                        <h5>Drag & Drop or Click to Upload</h5>
-                        <p class="text-muted">Supported formats: JPG, PNG, GIF (Max 5MB)</p>
-                        <input type="file" id="imageInput" accept="image/*" class="d-none">
-                        <button class="btn btn-primary mt-2" onclick="document.getElementById('imageInput').click()">
-                            Choose File
-                        </button>
-                    `;
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-
-        // Analyze image
-        function analyzeImage(file) {
-            analysisResults.classList.remove('d-none');
+        startScanBtn.addEventListener('click', function() {
+            scanResults.classList.remove('d-none');
             let progress = 0;
             const interval = setInterval(() => {
                 progress += 2;
-                analysisProgress.style.width = `${progress}%`;
+                scanProgress.style.width = `${progress}%`;
                 if (progress >= 100) {
                     clearInterval(interval);
-                    // Simulate security analysis
-                    const threats = Math.random() < 0.1; // 10% chance of finding threats
+                    // Simulate security scan results
+                    const threats = Math.random() < 0.2; // 20% chance of finding threats
                     if (threats) {
-                        analysisText.innerHTML = `
+                        scanText.innerHTML = `
                             <i class="fas fa-exclamation-triangle text-warning me-2"></i>
-                            Potential security threats detected! Please review the following:
+                            Potential security issues detected:
                             <ul class="mt-2 mb-0">
-                                <li>Metadata contains location information</li>
-                                <li>Image may contain hidden data</li>
+                                <li>Outdated system software</li>
+                                <li>Weak firewall settings</li>
+                                <li>Unsecured network connection</li>
                             </ul>
                         `;
                     } else {
-                        analysisText.innerHTML = `
+                        scanText.innerHTML = `
                             <i class="fas fa-check-circle text-success me-2"></i>
-                            No security threats detected. Your image appears to be safe.
+                            No major security threats detected. Your system appears to be well-protected.
                         `;
                     }
-                    analysisResults.classList.add('fade-in');
                 }
             }, 50);
-        }
-
-        // Remove image
-        window.removeImage = function() {
-            imagePreview.classList.add('d-none');
-            analysisResults.classList.add('d-none');
-            analysisProgress.style.width = '0%';
-            analysisText.textContent = 'Analyzing image for security threats...';
-            imageInput.value = '';
-        };
+        });
     });
+
+    function checkPasswordStrength() {
+        const password = prompt("Enter a password to check its strength:");
+        if (password) {
+            let strength = 0;
+            if (password.length >= 8) strength++;
+            if (/[A-Z]/.test(password)) strength++;
+            if (/[a-z]/.test(password)) strength++;
+            if (/[0-9]/.test(password)) strength++;
+            if (/[^A-Za-z0-9]/.test(password)) strength++;
+
+            let message = "";
+            if (strength <= 2) message = "Weak password. Please use a stronger one.";
+            else if (strength <= 4) message = "Moderate password. Consider adding more complexity.";
+            else message = "Strong password! Good job!";
+
+            alert(message);
+        }
+    }
+
+    function analyzeNetwork() {
+        alert("Network analysis started...\n\nChecking:\n- Firewall status\n- Network encryption\n- Connected devices\n\nPlease wait...");
+        setTimeout(() => {
+            alert("Network analysis complete!\n\nYour network appears to be secure, but consider:\n- Enabling WPA3 encryption\n- Updating router firmware\n- Using a VPN for additional security");
+        }, 2000);
+    }
+
+    function getRecommendations() {
+        const recommendations = [
+            "Enable two-factor authentication on all accounts",
+            "Keep your software and operating system updated",
+            "Use a password manager for secure password storage",
+            "Enable firewall protection",
+            "Regularly backup your important data",
+            "Use a VPN when connecting to public networks"
+        ];
+        
+        alert("Security Recommendations:\n\n" + recommendations.join("\n"));
+    }
 
     // Add scroll animations
     document.addEventListener('DOMContentLoaded', () => {
@@ -1007,44 +1583,170 @@
         });
     });
 
-    // Add this to your existing script section
+    // Modern Checklist Functionality
     document.addEventListener('DOMContentLoaded', function() {
         const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
         const progressBar = document.querySelector('.progress-bar');
         const progressText = document.querySelector('.progress-text');
         const completionMessage = document.querySelector('.checklist-completion');
-        
+        const checklistItems = document.querySelectorAll('.checklist-item');
+
         function updateProgress() {
             const checked = document.querySelectorAll('.checklist-item input[type="checkbox"]:checked').length;
             const total = checkboxes.length;
             const percentage = (checked / total) * 100;
-            
             progressBar.style.width = `${percentage}%`;
             progressText.textContent = `${checked}/${total} Completed`;
-            
             checkboxes.forEach((checkbox, index) => {
                 const item = checkbox.closest('.checklist-item');
-                const checkIcon = item.querySelector('.fa-check-circle');
-                
                 if (checkbox.checked) {
                     item.classList.add('completed');
-                    checkIcon.classList.remove('d-none');
                 } else {
                     item.classList.remove('completed');
-                    checkIcon.classList.add('d-none');
                 }
             });
-            
             if (checked === total) {
                 completionMessage.classList.remove('d-none');
+                completionMessage.classList.add('animate__fadeInUp');
             } else {
                 completionMessage.classList.add('d-none');
+                completionMessage.classList.remove('animate__fadeInUp');
             }
         }
-        
         checkboxes.forEach(checkbox => {
             checkbox.addEventListener('change', updateProgress);
         });
+        checklistItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                if (e.target.tagName !== 'INPUT') {
+                    const cb = item.querySelector('input[type="checkbox"]');
+                    cb.checked = !cb.checked;
+                    cb.dispatchEvent(new Event('change'));
+                }
+            });
+        });
+        // Animate fade-in for checklist items
+        document.querySelectorAll('.checklist-item').forEach((el, i) => {
+            setTimeout(() => el.classList.add('animate__fadeInUp'), 100 + i * 120);
+        });
+        // Animate card fade-in
+        setTimeout(() => document.querySelector('.checklist-card').classList.add('animate__fadeInUp'), 100);
+    });
+
+    // Image Analysis Tool Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropZone = document.getElementById('dropZone');
+        const imageInput = document.getElementById('imageInput');
+        const imagePreview = document.getElementById('imagePreview');
+        const previewImg = document.getElementById('previewImg');
+        const analysisResults = document.getElementById('analysisResults');
+        const analysisProgress = document.getElementById('analysisProgress');
+        const analysisText = document.getElementById('analysisText');
+
+        // Handle drag and drop
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('border-primary');
+        });
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('border-primary');
+        });
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('border-primary');
+            const file = e.dataTransfer.files[0];
+            handleImageUpload(file);
+        });
+        // Handle file input change
+        imageInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            handleImageUpload(file);
+        });
+        // Handle image upload
+        function handleImageUpload(file) {
+            if (file && file.type.startsWith('image/')) {
+                if (file.size > 5 * 1024 * 1024) { // 5MB limit
+                    alert('File size exceeds 5MB limit');
+                    return;
+                }
+                // Show loading state
+                dropZone.innerHTML = '<div class="loading"><i class="fas fa-spinner fa-spin fa-2x"></i><p>Processing image...</p></div>';
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    previewImg.src = e.target.result;
+                    imagePreview.classList.remove('d-none');
+                    analyzeImage(file);
+                    // Restore drop zone
+                    dropZone.innerHTML = `
+                        <i class="fas fa-cloud-upload-alt fa-3x text-primary mb-3"></i>
+                        <h5>Drag & Drop or Click to Upload</h5>
+                        <p class="text-muted">Supported formats: JPG, PNG, GIF (Max 5MB)</p>
+                        <input type="file" id="imageInput" accept="image/*" class="d-none">
+                        <button class="btn btn-primary mt-2" onclick="document.getElementById('imageInput').click()">
+                            Choose File
+                        </button>
+                    `;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+        // Analyze image
+        function analyzeImage(file) {
+            analysisResults.classList.remove('d-none');
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 2;
+                analysisProgress.style.width = `${progress}%`;
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    // Simulate security analysis
+                    const threats = Math.random() < 0.1; // 10% chance of finding threats
+                    if (threats) {
+                        analysisText.innerHTML = `
+                            <i class='fas fa-exclamation-triangle text-warning me-2'></i>
+                            Potential security threats detected! Please review the following:
+                            <ul class='mt-2 mb-0'>
+                                <li>Metadata contains location information</li>
+                                <li>Image may contain hidden data</li>
+                            </ul>
+                        `;
+                    } else {
+                        analysisText.innerHTML = `
+                            <i class='fas fa-check-circle text-success me-2'></i>
+                            No security threats detected. Your image appears to be safe.
+                        `;
+                    }
+                    analysisResults.classList.add('fade-in');
+                }
+            }, 50);
+        }
+        // Remove image
+        window.removeImage = function() {
+            imagePreview.classList.add('d-none');
+            analysisResults.classList.add('d-none');
+            analysisProgress.style.width = '0%';
+            analysisText.textContent = 'Analyzing image for security threats...';
+            imageInput.value = '';
+        };
+    });
+
+    // Animate SVG network background
+    document.addEventListener('DOMContentLoaded', function() {
+        function animateNetwork() {
+            const c1 = document.getElementById('c1');
+            const c2 = document.getElementById('c2');
+            const c3 = document.getElementById('c3');
+            let t = 0;
+            function frame() {
+                t += 0.02;
+                if (c1) c1.setAttribute('cy', 150 + Math.sin(t) * 12);
+                if (c2) c2.setAttribute('cx', 840 + Math.cos(t/1.5) * 18);
+                if (c3) c3.setAttribute('cy', 50 + Math.sin(t/1.2) * 10);
+                requestAnimationFrame(frame);
+            }
+            frame();
+        }
+        animateNetwork();
     });
     </script>
 </body>
